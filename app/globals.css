@@ -1,0 +1,151 @@
+@import 'tailwindcss';
+
+:root { --paper:#f2f0e9; --paper-2:#e9e5da; --ink:#151515; --muted:#706e68; --blue:#1848e8; --line:rgba(21,21,21,.24); }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { margin:0; color:var(--ink); background:var(--paper); font-family:Arial,"PingFang SC","Noto Sans CJK SC",sans-serif; }
+button { font:inherit; }
+a { color:inherit; text-decoration:none; }
+::selection { color:white; background:var(--blue); }
+.gallery-site { min-height:100vh; overflow:hidden; background:var(--paper); }
+.page-progress { position:fixed; z-index:100; inset:0 0 auto; height:3px; transform-origin:left; background:var(--blue); }
+.site-header { height:72px; display:grid; grid-template-columns:1fr auto 1fr; align-items:center; padding:0 3.2vw; border-bottom:1px solid var(--line); }
+.wordmark,.site-header nav a,.header-contact { font-size:10px; line-height:1; letter-spacing:.06em; }
+.wordmark { font-weight:700; }
+.site-header nav { display:flex; gap:30px; }
+.site-header nav a,.header-contact { position:relative; }
+.site-header nav a::after,.header-contact::after { content:""; position:absolute; left:0; right:100%; bottom:-5px; height:1px; background:var(--ink); transition:right .3s ease; }
+.site-header nav a:hover::after,.header-contact:hover::after { right:0; }
+.header-contact { justify-self:end; }
+
+.gallery-hero { padding:74px 3.2vw 0; }
+.hero-heading { display:grid; grid-template-columns:14vw 1fr; align-items:start; }
+.eyeline,.section-label { padding-top:11px; font-size:9px; line-height:1.35; letter-spacing:.07em; }
+.hero-heading h1 { margin:0; font:400 clamp(60px,8.2vw,130px)/.86 "Iowan Old Style","Baskerville","Times New Roman","Songti SC",serif; letter-spacing:-.075em; }
+.hero-heading h1 em { font-weight:400; }
+.hero-intro { width:68%; margin:34px 0 44px auto; display:grid; grid-template-columns:14vw minmax(320px,560px) 1fr; gap:3vw; align-items:start; }
+.hero-intro>span,.hero-intro small { font-size:8px; line-height:1.65; letter-spacing:.07em; }
+.hero-intro p { max-width:560px; margin:0; font-size:13px; line-height:1.72; }
+.hero-intro small { justify-self:end; text-align:right; }
+.gallery-view { position:relative; min-height:100vh; margin-bottom:3.2vw; padding:32px clamp(24px,3.2vw,52px) 38px; overflow:hidden; isolation:isolate; background:radial-gradient(circle at 52% 5%,#faf9f4 0,#ece9df 52%,#d9d5ca 100%); border:1px solid rgba(21,21,21,.16); box-shadow:inset 0 -16vh 32vh rgba(126,118,96,.09); }
+.gallery-view::after { content:""; position:absolute; z-index:-1; left:4%; right:4%; bottom:15%; height:1px; background:rgba(21,21,21,.16); box-shadow:0 18vh 35vh rgba(55,51,42,.18); }
+.gallery-view-head { position:relative; z-index:3; display:grid; grid-template-columns:1fr auto 1fr; align-items:end; padding-bottom:20px; border-bottom:1px solid rgba(21,21,21,.19); }
+.gallery-view-head>span,.gallery-view-head>p,.gallery-view-index { font-size:.75rem; line-height:1.4; letter-spacing:.08em; }
+.gallery-view-head h2 { margin:0; font:italic 400 clamp(42px,4.8vw,76px)/.86 "Iowan Old Style","Baskerville",serif; letter-spacing:-.055em; }
+.gallery-view-head p { justify-self:end; margin:0; }
+.gallery-hall { min-height:calc(100vh - 132px); display:grid; grid-template-columns:repeat(12,1fr); grid-template-rows:repeat(2,minmax(0,1fr)); gap:2.5vh 2.4vw; padding:2.2vh 0 3vh; perspective:1500px; }
+.gallery-frame { --base-rotate:0deg; --frame-x:0px; --frame-y:0px; --frame-lift:0px; --frame-rx:0deg; --frame-ry:0deg; position:relative; align-self:center; min-width:0; transform:translate3d(var(--frame-x),calc(var(--frame-y) + var(--frame-lift)),0) perspective(1200px) rotate(var(--base-rotate)) rotateX(var(--frame-rx)) rotateY(var(--frame-ry)); transform-style:preserve-3d; transition:transform .48s cubic-bezier(.2,.75,.2,1),filter .4s ease; }
+.gallery-frame:hover,.gallery-frame:focus-visible { --frame-lift:-8px; z-index:5; filter:drop-shadow(0 22px 22px rgba(31,29,24,.14)); }
+.gallery-frame:focus-visible { outline:2px solid var(--blue); outline-offset:10px; }
+.gallery-frame-01 { --base-rotate:-.65deg; grid-column:1/5; grid-row:1; }
+.gallery-frame-02 { --base-rotate:.55deg; grid-column:6/9; grid-row:1/3; }
+.gallery-frame-03 { --base-rotate:-.4deg; grid-column:10/13; grid-row:1; align-self:end; }
+.gallery-frame-04 { --base-rotate:.45deg; grid-column:2/5; grid-row:2; }
+.gallery-frame-art { position:relative; display:block; width:100%; overflow:hidden; background:#d8d3c7; border:clamp(7px,.72vw,12px) solid #292824; outline:1px solid rgba(255,255,255,.72); box-shadow:0 14px 28px rgba(45,41,31,.16),inset 0 0 0 1px rgba(255,255,255,.35); }
+.gallery-frame-art::after { content:""; position:absolute; z-index:2; inset:0; pointer-events:none; box-shadow:inset 0 0 20px rgba(22,20,16,.14); }
+.gallery-frame-art img { object-fit:cover; filter:saturate(.82) brightness(1.025); transition:transform .8s cubic-bezier(.2,.7,.2,1),filter .55s ease; }
+.gallery-frame:hover .gallery-frame-art img,.gallery-frame:focus-visible .gallery-frame-art img { transform:scale(1.025); filter:saturate(.98) brightness(1.02); }
+.gallery-frame-01 .gallery-frame-art { aspect-ratio:1.25; }
+.gallery-frame-02 .gallery-frame-art { aspect-ratio:.76; }
+.gallery-frame-02 .gallery-frame-art img { object-position:54% center; }
+.gallery-frame-03 .gallery-frame-art { aspect-ratio:1.04; }
+.gallery-frame-03 .gallery-frame-art img { object-position:56% center; }
+.gallery-frame-04 .gallery-frame-art { aspect-ratio:1.3; }
+.gallery-frame-04 .gallery-frame-art img { object-position:60% center; }
+.gallery-plaque { display:grid; grid-template-columns:28px minmax(0,1fr) auto; gap:9px; align-items:start; margin-top:12px; padding-top:9px; border-top:1px solid rgba(21,21,21,.35); }
+.gallery-plaque>b,.gallery-plaque strong,.gallery-plaque small,.gallery-plaque em { font-size:.75rem; line-height:1.35; letter-spacing:.045em; }
+.gallery-plaque>b { font-weight:500; }
+.gallery-plaque>span { display:flex; flex-direction:column; gap:2px; min-width:0; }
+.gallery-plaque strong { overflow:hidden; font-weight:500; white-space:nowrap; text-overflow:ellipsis; }
+.gallery-plaque small { color:var(--muted); }
+.gallery-plaque em { align-self:center; color:var(--blue); font-style:normal; opacity:0; transform:translateX(-6px); transition:opacity .3s ease,transform .3s ease; }
+.gallery-frame:hover .gallery-plaque em,.gallery-frame:focus-visible .gallery-plaque em { opacity:1; transform:none; }
+.gallery-view-index { position:absolute; right:clamp(24px,3.2vw,52px); bottom:18px; color:var(--muted); }
+.hero-landscape { --px:0px; --py:0px; position:relative; min-height:54vh; overflow:hidden; isolation:isolate; background:#bccfd1; }
+.hero-landscape::after { content:""; position:absolute; z-index:1; inset:0; pointer-events:none; background:linear-gradient(180deg,transparent 52%,rgba(20,38,36,.34) 100%); }
+.hero-landscape>img { position:absolute; inset:-2%; width:104%; height:104%; object-fit:cover; object-position:center 42%; filter:saturate(.88) brightness(1.035); transform:translate(calc(var(--px)*-.32),calc(var(--py)*-.32)) scale(1.035); transition:transform .55s cubic-bezier(.2,.7,.2,1),filter .55s ease; }
+.hero-landscape:hover>img { filter:saturate(1) brightness(1.02); }
+.landscape-label,.landscape-art-credit { position:absolute; z-index:2; bottom:16px; color:#fff; font-size:8px; letter-spacing:.08em; text-shadow:0 1px 12px rgba(0,0,0,.45); }
+.landscape-label { left:18px; }
+.landscape-art-credit { right:18px; padding-bottom:3px; border-bottom:1px solid rgba(255,255,255,.65); }
+.round-link { position:absolute; z-index:4; right:4vw; top:50%; width:108px; aspect-ratio:1; border-radius:50%; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; color:#fff; background:var(--blue); font-size:10px; line-height:1.05; text-align:center; transition:transform .35s cubic-bezier(.2,.8,.2,1),background .3s; }
+.round-link b { font-size:17px; font-weight:400; }
+.round-link:hover { transform:rotate(8deg) scale(1.08); background:#0f35bc; }
+
+.curatorial { position:relative; min-height:82vh; display:grid; grid-template-columns:15vw 1fr; gap:4vw; align-content:center; padding:12vw 6vw; }
+.curatorial>p { max-width:1050px; margin:0; font:400 clamp(44px,6vw,92px)/1.02 "Iowan Old Style","Baskerville","Times New Roman","Songti SC",serif; letter-spacing:-.05em; }
+.curatorial>p em { color:var(--blue); }
+.curatorial-note { grid-column:2; margin-top:48px; display:flex; justify-content:space-between; max-width:840px; font-size:8px; line-height:1.6; letter-spacing:.07em; }
+
+.project-gallery { display:grid; grid-template-columns:repeat(12,1fr); gap:11vw 2.2vw; padding:2vw 3.2vw 14vw; }
+.project-card { min-width:0; scroll-margin-top:92px; }
+.project-wide { grid-column:1/8; }.project-tall { grid-column:9/13; margin-top:13vw; }.project-small { grid-column:2/6; }.project-wide-reverse { grid-column:7/13; margin-top:9vw; }.project-banner { grid-column:1/13; margin-top:3vw; }
+.project-open { position:relative; display:block; width:100%; padding:0; overflow:hidden; border:0; color:inherit; background:transparent; text-align:left; cursor:pointer; }
+.project-hover { position:absolute; right:22px; bottom:22px; width:78px; aspect-ratio:1; border-radius:50%; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:5px; color:white; background:var(--blue); font-size:8px; line-height:1; opacity:0; transform:translateY(18px) scale(.8); transition:opacity .35s,transform .4s cubic-bezier(.2,.8,.2,1); }
+.project-hover b { font-size:14px; font-weight:400; }
+.project-open:hover .project-hover,.project-open:focus-visible .project-hover { opacity:1; transform:none; }
+.project-open:hover .artwork { transform:scale(1.025); }
+.project-open:focus-visible { outline:2px solid var(--blue); outline-offset:5px; }
+.project-caption { display:grid; grid-template-columns:32px 1fr auto; gap:13px; align-items:start; padding-top:14px; border-top:1px solid var(--line); }
+.project-caption>span,.project-caption small,.project-caption p { font-size:8px; line-height:1.5; letter-spacing:.05em; }
+.project-caption h2 { margin:0 0 4px; font:400 clamp(19px,1.8vw,28px)/1.15 "Iowan Old Style","Songti SC",serif; }
+.project-caption p { margin:0; color:var(--muted); }
+.project-caption small { justify-self:end; text-align:right; color:var(--muted); }
+
+.artwork { position:relative; min-height:32vw; overflow:hidden; transform-origin:center; transition:transform .7s cubic-bezier(.2,.7,.2,1); background:#d8d3c7; }
+.project-tall .artwork { min-height:48vw; }.project-small .artwork { min-height:38vw; }.project-wide-reverse .artwork { min-height:34vw; }.project-banner .artwork { min-height:42vw; }
+.artwork>img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:saturate(.84) brightness(1.035); transition:transform 1.1s cubic-bezier(.16,.7,.2,1),filter .65s ease; }
+.artwork>span { position:absolute; z-index:2; display:block; }
+.artwork-wash { z-index:1!important; inset:0; pointer-events:none; background:linear-gradient(180deg,rgba(18,25,28,.13),transparent 28%,transparent 61%,rgba(13,25,23,.46) 100%); }
+.artwork-code { left:18px; top:16px; padding:7px 9px; color:#fff; border:1px solid rgba(255,255,255,.62); border-radius:50%; font:500 8px/1 Arial,sans-serif; letter-spacing:.07em; text-shadow:0 1px 10px rgba(0,0,0,.35); }
+.artwork-word { left:18px; bottom:16px; max-width:70%; color:#fff; font:italic 400 clamp(23px,3vw,50px)/1 "Iowan Old Style",serif; letter-spacing:-.04em; text-shadow:0 2px 20px rgba(0,0,0,.48); }
+.artwork-credit { top:18px; right:18px; max-width:48%; color:#fff; font:500 7px/1.4 Arial,sans-serif; letter-spacing:.09em; text-align:right; text-shadow:0 1px 10px rgba(0,0,0,.5); }
+.project-open:hover .artwork>img { transform:scale(1.055); filter:saturate(1) brightness(1.02); }
+.art-gptutor>img { object-position:52% center; }
+.art-feedback>img { object-position:55% center; }
+.art-wellness>img { object-position:58% center; }
+.art-crawler>img { object-position:center 52%; }
+
+.method-section { display:grid; grid-template-columns:1fr 1.35fr; gap:9vw; padding:11vw 6vw; background:#ded9cc; }
+.method-title { position:relative; min-height:640px; }
+.method-title h2 { margin:70px 0 0; font:400 clamp(54px,6.5vw,98px)/.9 "Iowan Old Style","Baskerville",serif; letter-spacing:-.06em; }
+.small-round { top:auto; right:auto; left:0; bottom:0; width:96px; }
+.method-list { border-top:1px solid var(--line); }
+.method-list>div { display:grid; grid-template-columns:36px 1fr 1.2fr; gap:20px; padding:29px 0 44px; border-bottom:1px solid var(--line); }
+.method-list span { font-size:8px; }.method-list h3 { margin:0; font:400 28px/1.1 "Iowan Old Style",serif; }.method-list p { margin:0; color:#55534e; font-size:12px; line-height:1.8; }
+
+.profile-section { padding:13vw 6vw 11vw; background:#f5f3ed; }
+.profile-quote { display:grid; grid-template-columns:16vw 1fr; margin-bottom:12vw; }
+.profile-quote p { margin:0; font:400 clamp(50px,7.4vw,112px)/.92 "Iowan Old Style","Baskerville","Times New Roman","Songti SC",serif; letter-spacing:-.065em; }
+.profile-quote em { color:var(--blue); }
+.profile-columns { display:grid; grid-template-columns:1.2fr .85fr .85fr; gap:7vw; margin-left:16vw; border-top:1px solid var(--line); padding-top:26px; }
+.profile-columns h3 { margin:0 0 34px; font-size:8px; letter-spacing:.07em; }
+.profile-columns dl { display:grid; grid-template-columns:80px 1fr; gap:24px 16px; margin:0; }
+.profile-columns dt,.profile-columns li,.profile-columns>div>p { color:#55534e; font-size:10px; line-height:1.7; }
+.profile-columns dd { margin:0; display:flex; flex-direction:column; gap:4px; }.profile-columns dd b { font-size:12px; font-weight:500; }.profile-columns dd span { color:#706d66; font-size:10px; line-height:1.55; }
+.profile-columns ul { margin:0; padding:0; list-style:none; }.profile-columns li { padding:0 0 14px; margin-bottom:14px; border-bottom:1px solid rgba(21,21,21,.12); }
+.profile-columns>div>p { max-width:300px; margin:0 0 40px; font-family:"Iowan Old Style",serif; font-size:20px; line-height:1.5; }
+.profile-columns a { font-size:9px; border-bottom:1px solid var(--ink); padding-bottom:4px; }
+
+.site-footer { position:relative; min-height:75vh; padding:10vw 6vw 38px; color:#f4f1e8; background:#171717; }
+.site-footer>div:first-child>span { font-size:8px; letter-spacing:.08em; }.site-footer>div:first-child>p { margin:52px 0 0; font:400 clamp(56px,7.8vw,120px)/.9 "Iowan Old Style","Baskerville",serif; letter-spacing:-.065em; }
+.footer-round { top:49%; right:8vw; width:122px; }
+.footer-art { position:absolute; left:6vw; bottom:92px; display:flex; align-items:baseline; gap:22px; color:#aaa79f; font-size:8px; letter-spacing:.06em; }
+.footer-art p { margin:0; }
+.footer-art a { color:#f4f1e8; border-bottom:1px solid rgba(255,255,255,.4); padding-bottom:3px; }
+.footer-meta { position:absolute; left:6vw; right:6vw; bottom:32px; display:flex; justify-content:space-between; padding-top:18px; border-top:1px solid rgba(255,255,255,.25); font-size:8px; letter-spacing:.06em; }
+
+.case-overlay { position:fixed; z-index:200; inset:0; overflow:auto; display:grid; place-items:center; padding:30px; background:rgba(18,18,18,.74); backdrop-filter:blur(8px); animation:overlay-in .35s ease both; }
+.case-panel { position:relative; width:min(1320px,96vw); max-height:92vh; overflow:auto; display:grid; grid-template-columns:1.05fr .95fr; background:var(--paper); box-shadow:0 30px 90px rgba(0,0,0,.35); animation:panel-in .5s cubic-bezier(.2,.8,.2,1) both; }
+.case-close { position:absolute; z-index:5; right:22px; top:22px; width:70px; aspect-ratio:1; border:0; border-radius:50%; color:white; background:var(--blue); font-size:8px; line-height:1.2; cursor:pointer; transition:transform .3s; }.case-close:hover { transform:rotate(9deg); }
+.case-art { position:relative; min-height:78vh; }.case-art>.artwork { height:100%; min-height:78vh; }.case-art>span,.case-art>a { position:absolute; z-index:4; bottom:18px; color:white; font-size:8px; letter-spacing:.06em; text-shadow:0 1px 12px rgba(0,0,0,.55); }.case-art>span { left:20px; }.case-art>a { right:20px; padding-bottom:3px; border-bottom:1px solid rgba(255,255,255,.6); }
+.case-copy { padding:8vw 6vw 5vw; }.case-role { font-size:8px; letter-spacing:.07em; }.case-copy h2 { margin:36px 0 5px; font:400 clamp(38px,4.2vw,66px)/.95 "Iowan Old Style","Songti SC",serif; letter-spacing:-.05em; }.case-copy>em { color:var(--blue); font:italic 400 20px/1.2 "Iowan Old Style",serif; }.case-summary { margin:34px 0; font:400 24px/1.45 "Iowan Old Style","Songti SC",serif; }.case-metric { display:flex; align-items:end; gap:18px; padding:26px 0; border-block:1px solid var(--line); }.case-metric b { color:var(--blue); font:400 54px/.8 "Iowan Old Style",serif; }.case-metric span { max-width:130px; color:var(--muted); font-size:9px; line-height:1.4; }
+.case-story { margin-top:38px; }.case-story section { display:grid; grid-template-columns:80px 1fr; gap:16px; padding:0 0 25px; }.case-story span { font-size:8px; letter-spacing:.06em; }.case-story p { margin:0; color:#55534e; font-size:11px; line-height:1.8; }.case-tools { margin:15px 0 0; color:var(--blue); font-size:9px; line-height:1.6; }
+@keyframes overlay-in { from{opacity:0} }.case-panel{} @keyframes panel-in { from{opacity:0;transform:translateY(24px) scale(.98)} }
+
+.reveal { opacity:0; transform:translateY(24px); transition:opacity .85s ease,transform .85s cubic-bezier(.2,.7,.2,1); }.reveal.shown { opacity:1; transform:none; }
+@media (max-width:900px) {
+  .site-header{grid-template-columns:1fr auto;height:60px}.site-header nav{display:none}.gallery-hero{padding:55px 20px 0}.hero-heading{grid-template-columns:1fr;gap:22px}.hero-heading h1{font-size:13.4vw}.hero-intro{width:100%;grid-template-columns:58px 1fr;margin:30px 0}.hero-intro small{display:none}.gallery-view{min-height:auto;margin:0 0 20px;padding:22px 18px 46px}.gallery-view-head{grid-template-columns:1fr auto;gap:20px}.gallery-view-head h2{grid-row:2;grid-column:1/3;justify-self:start;margin-top:24px}.gallery-view-head p{justify-self:end}.gallery-hall{min-height:auto;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto;gap:64px 20px;padding:70px 0 38px}.gallery-frame-01,.gallery-frame-02,.gallery-frame-03,.gallery-frame-04{grid-column:auto;grid-row:auto;align-self:start}.gallery-frame-02{margin-top:54px}.gallery-frame-04{margin-top:-18px}.gallery-plaque{grid-template-columns:24px minmax(0,1fr)}.gallery-plaque em{display:none}.gallery-plaque strong,.gallery-plaque small{white-space:normal}.gallery-view-index{left:18px;right:auto}.hero-landscape{min-height:48vh}.landscape-art-credit{display:none}.round-link{width:88px;right:20px}.curatorial{grid-template-columns:1fr;min-height:72vh;padding:20vw 20px}.curatorial>p,.curatorial-note{grid-column:1}.curatorial>p{font-size:12vw}.project-gallery{gap:20vw 18px;padding:0 20px 22vw}.project-wide,.project-tall,.project-small,.project-wide-reverse{grid-column:1/13;margin-top:0}.project-banner{grid-column:1/13}.artwork,.project-tall .artwork,.project-small .artwork,.project-wide-reverse .artwork,.project-banner .artwork{min-height:70vw}.project-caption small{display:none}.method-section{grid-template-columns:1fr;padding:18vw 20px}.method-title{min-height:430px}.method-list>div{grid-template-columns:28px 1fr}.method-list p{grid-column:2}.profile-section{padding:20vw 20px}.profile-quote{grid-template-columns:1fr;gap:36px}.profile-quote p{font-size:13vw}.profile-columns{grid-template-columns:1fr;margin-left:0;gap:70px}.site-footer{padding:20vw 20px 30px;min-height:75vh}.footer-round{top:auto;bottom:165px;right:20px}.footer-art{left:20px;right:20px;bottom:88px;gap:9px;flex-wrap:wrap}.footer-art p{width:100%}.footer-meta{left:20px;right:20px}.footer-meta span:nth-child(2){display:none}.case-overlay{padding:0}.case-panel{width:100%;max-height:100vh;grid-template-columns:1fr}.case-art{min-height:48vh}.case-art>.artwork{min-height:48vh}.case-copy{padding:60px 24px}.case-close{position:fixed;right:14px;top:14px}.case-summary{font-size:20px}
+}
+@media (max-width:520px) { .project-caption{grid-template-columns:25px 1fr}.artwork-credit{display:none}.method-title h2{font-size:15vw}.profile-columns dl{grid-template-columns:65px 1fr}.site-footer>div:first-child>p{font-size:14vw}.footer-meta span{font-size:7px}.case-story section{grid-template-columns:1fr;gap:8px} }
+@media (prefers-reduced-motion:reduce) { html{scroll-behavior:auto}.reveal,.artwork,.artwork>img,.round-link,.project-hover,.gallery-frame,.gallery-frame-art img,.hero-landscape>img{transition:none}.case-overlay,.case-panel{animation:none} }
