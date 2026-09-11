@@ -2,23 +2,23 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://qinye-ai-product-portfolio.zqychelsea.chatgpt.site'),
-  title: '张沁烨 · AI 产品经理作品集',
-  description: '张沁烨的 AI 产品作品集：把复杂技术组织成清晰、可信、可落地的产品体验。',
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? 'https://zqychelsea.github.io/ai-product-portfolio/'),
+  title: 'Qinye Zhang | AI Product Manager',
+  description: 'AI product work by Qinye Zhang—turning complex technology into clear, trustworthy and measurable product experiences.',
   openGraph: {
-    title: '张沁烨 · AI 产品经理作品集',
+    title: 'Qinye Zhang | AI Product Manager',
     description: 'Product intelligence, carefully composed.',
-    images: [{ url: '/og.png', width: 1734, height: 907, alt: '张沁烨 AI 产品经理作品集' }],
+    images: [{ url: '/projects/academic-compass.webp', width: 1536, height: 1024, alt: 'Qinye Zhang AI product portfolio' }],
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: '张沁烨 · AI 产品经理作品集',
+    title: 'Qinye Zhang | AI Product Manager',
     description: 'Product intelligence, carefully composed.',
-    images: ['/og.png'],
+    images: ['/projects/academic-compass.webp'],
   },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="zh-CN"><body>{children}</body></html>;
+  return <html lang="en"><body>{children}</body></html>;
 }
