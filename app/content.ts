@@ -17,7 +17,7 @@ export const localeNames: Record<Locale, string> = {
 export const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 export const assetPath = (path: string) => `${basePath}${path}`;
 export const localePath = (locale: Locale, suffix = '/') =>
-  `${basePath}/${locale}${suffix.startsWith('/') ? suffix : `/${suffix}`}`;
+  `/${locale}${suffix.startsWith('/') ? suffix : `/${suffix}`}`;
 
 export const isLocale = (value: string): value is Locale => locales.includes(value as Locale);
 export const isProjectSlug = (value: string): value is ProjectSlug => projectSlugs.includes(value as ProjectSlug);

@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { useEffect } from 'react';
-import { assetPath, Locale, localeNames, localePath, locales, ui } from '@/app/content';
+import { assetPath, basePath, Locale, localeNames, localePath, locales, ui } from '@/app/content';
 
 export function SiteHeader({ locale, suffix = '/' }: { locale: Locale; suffix?: string }) {
   const copy = ui[locale];
@@ -11,7 +11,7 @@ export function SiteHeader({ locale, suffix = '/' }: { locale: Locale; suffix?: 
   const switchLanguage = (event: React.MouseEvent<HTMLAnchorElement>, target: Locale) => {
     event.preventDefault();
     localStorage.setItem('portfolio-locale', target);
-    window.location.assign(`${localePath(target, suffix)}${window.location.hash}`);
+    window.location.assign(`${basePath}${localePath(target, suffix)}${window.location.hash}`);
   };
 
   return (
@@ -27,7 +27,7 @@ export function SiteHeader({ locale, suffix = '/' }: { locale: Locale; suffix?: 
       </nav>
       <nav className="language-nav" aria-label="Language">
         {locales.map((item) => (
-          <a key={item} href={localePath(item, suffix)} onClick={(event) => switchLanguage(event, item)} aria-current={item === locale ? 'page' : undefined}>
+          <a key={item} href={`${basePath}${localePath(item, suffix)}`} onClick={(event) => switchLanguage(event, item)} aria-current={item === locale ? 'page' : undefined}>
             {localeNames[item]}
           </a>
         ))}

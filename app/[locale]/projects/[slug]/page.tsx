@@ -10,7 +10,9 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale, slug } = await params;
   if (!isLocale(locale) || !isProjectSlug(slug)) return {};
   const project = getProject(locale, slug);
-  return { title: `${project.title} | Qinye Zhang`, description: project.summary, openGraph: { images: [project.image] } };
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://zqychelsea.github.io/ai-product-portfolio/';
+  const shareImage = new URL(project.image.replace(/^\//, ''), siteUrl).toString();
+  return { title: `${project.title} | Qinye Zhang`, description: project.summary, openGraph: { images: [shareImage] } };
 }
 
 export default async function CaseRoute({ params }: { params: Promise<{ locale: string; slug: string }> }) {
