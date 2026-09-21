@@ -1,6 +1,6 @@
-import { LocaleRedirect } from '@/app/components/LocaleRedirect';
-import { PortfolioHome } from '@/app/components/PortfolioHome';
-
+import Editor from "./components/Editor";
+import { pageMetadata } from "./metadata";
+export const metadata = pageMetadata("zh-cn", "readme");
 export default function Home() {
-  return <><LocaleRedirect /><PortfolioHome locale="en" /></>;
+  return <Editor locale="zh-cn" file="readme" />;
 }

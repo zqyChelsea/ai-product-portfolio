@@ -36,6 +36,8 @@ jobs:
         run: npm run build:github
       - name: Disable Jekyll processing
         run: touch out/.nojekyll
+      - name: Validate exported routes and public links
+        run: node scripts/check-export.mjs
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:

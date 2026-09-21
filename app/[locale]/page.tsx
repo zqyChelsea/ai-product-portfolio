@@ -1,20 +1,25 @@
-import type { Metadata } from 'next';
-import { notFound } from 'next/navigation';
-import { PortfolioHome } from '@/app/components/PortfolioHome';
-import { isLocale, locales, ui } from '@/app/content';
-
+import { notFound } from "next/navigation";
+import Editor from "../components/Editor";
+import { isLocale, locales } from "../content";
+import { pageMetadata } from "../metadata";
 export const dynamicParams = false;
-export function generateStaticParams() { return locales.map((locale) => ({ locale })); }
-
-export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
-  const { locale } = await params;
-  if (!isLocale(locale)) return {};
-  const copy = ui[locale];
-  return { title: copy.documentTitle, description: copy.documentDescription };
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
 }
-
-export default async function LocalisedHome({ params }: { params: Promise<{ locale: string }> }) {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  return isLocale(locale) ? pageMetadata(locale, "readme") : {};
+}
+export default async function Home({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
   const { locale } = await params;
   if (!isLocale(locale)) notFound();
-  return <PortfolioHome locale={locale} />;
+  return <Editor locale={locale} file="readme" />;
 }
