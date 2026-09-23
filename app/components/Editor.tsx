@@ -374,7 +374,7 @@ export default function Editor({
                 </div>
                 <div className="hero-grid">
                   <div className="hero-copy">
-                    <p className="intro-name">
+                    <h1>
                       {tr(
                         label(
                           "你好，我是张沁烨。",
@@ -382,30 +382,15 @@ export default function Editor({
                           "Hi, I’m Qinye.",
                         ),
                       )}
-                      <span> / Chelsea</span>
-                    </p>
-                    <h1>
-                      {tr(
-                        label("把复杂的 AI，", "把複雜的 AI，", "Complex AI."),
-                      )}
-                      <br />
-                      <em>
-                        {tr(
-                          label(
-                            "做成好用的产品。",
-                            "做成好用的產品。",
-                            "Thoughtful products.",
-                          ),
-                        )}
-                      </em>
                       <span className="cursor" aria-hidden="true" />
                     </h1>
+                    <p className="intro-name">Chelsea</p>
                     <p className="hero-description">
                       {tr(
                         label(
-                          "我是一名 AI 产品经理，连接用户研究、产品设计与工程实践。关心技术能做到什么，也关心它为什么值得被做出来。",
-                          "我是一名 AI 產品經理，連接用戶研究、產品設計與工程實作。關心技術能做到甚麼，也關心它為何值得被做出來。",
-                          "I’m an AI product manager connecting user research, product design and engineering. I care about what technology can do—and why it is worth building.",
+                          "我对 AI 产品充满兴趣，关注以用户为导向的产品设计，以及真实应用场景中的工程实践。我关心前沿技术能拓展怎样的边界，也关心它为什么值得被做出来。「已识乾坤大，犹怜草木青。」我相信，科技与人文的交汇，能让产品既有解决问题的能力，也有体察人的温度。",
+                          "我對 AI 產品充滿興趣，關注以用戶為導向的產品設計，以及真實應用場景中的工程實踐。我關心前沿技術能拓展怎樣的邊界，也關心它為何值得被做出來。「已識乾坤大，猶憐草木青。」我相信，科技與人文的交匯，能讓產品既有解決問題的能力，也有體察人的溫度。",
+                          "I’m deeply interested in AI products, with a focus on user-centered design and engineering for real-world applications. I care about the boundaries emerging technologies can push—and why they are worth building. A line of Chinese poetry captures a belief I hold close: ‘Having seen the vastness of the world, I still cherish its smallest growing things.’ I believe bringing technology and the humanities together can help us build products that solve problems with care for the people who use them.",
                         ),
                       )}
                     </p>

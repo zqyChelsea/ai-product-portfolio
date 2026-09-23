@@ -74,7 +74,7 @@ for (const path of scan(root)) {
   );
 }
 assert(
-  readFileSync(pages[0], "utf8").includes("把复杂的 AI"),
+  readFileSync(pages[0], "utf8").includes("你好，我是张沁烨。"),
   "Default entry must be simplified Chinese",
 );
 console.log(
