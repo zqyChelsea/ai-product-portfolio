@@ -55,7 +55,7 @@ const publicHosts = new Set([
   "github.com",
   "www.linkedin.com",
   "doi.org",
-  "zqyRiver.github.io",
+  "zqyriver.github.io",
 ]);
 for (const page of pages) {
   for (const match of readFileSync(page, "utf8").matchAll(
@@ -77,6 +77,35 @@ assert(
   readFileSync(pages[0], "utf8").includes("你好，我是张沁烨。"),
   "Default entry must be simplified Chinese",
 );
+for (const locale of locales) {
+  const home = readFileSync(join(root, locale, "index.html"), "utf8");
+  assert(
+    !home.includes('class="intro-name">River'),
+    `Homepage name suffix remains: ${locale}`,
+  );
+  const contact = readFileSync(
+    join(root, locale, "files/contact/index.html"),
+    "utf8",
+  );
+  for (const href of [
+    "mailto:zqy.river@gmail.com",
+    "tel:+85263144816",
+    "tel:+8618252616365",
+  ]) {
+    assert(
+      contact.includes(`href="${href}"`),
+      `Missing contact action: ${locale}`,
+    );
+  }
+  const resume = readFileSync(
+    join(root, locale, "files/resume/index.html"),
+    "utf8",
+  );
+  assert(
+    resume.includes("mailto:zqy.river@gmail.com"),
+    `Outdated résumé email: ${locale}`,
+  );
+}
 console.log(
   `PASS: ${pages.length} static content pages, ${links} local links/assets, default Chinese, and public-link allowlist.`,
 );
