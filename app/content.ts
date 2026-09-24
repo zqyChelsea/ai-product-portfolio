@@ -19,7 +19,7 @@ export const phones = [
     href: "tel:+8618252616365",
   },
 ];
-export const github = "https://github.com/zqyRiver";
+export const github = "https://github.com/zqyChelsea";
 export const linkedin = "https://www.linkedin.com/in/qinye-zhang-247435295/";
 
 export type Section = { title: Text; body: Text; points?: Text[] };
@@ -204,7 +204,7 @@ export const entries: Entry[] = [
     id: "academic-advisor",
     file: "academic-advisor.md",
     category: "projects",
-    date: "2025.10 — 2026.05",
+    date: "2025.09 — 2026.04",
     title: [
       "香港理工大学Agent学术顾问",
       "香港理工大學 Agent 學術顧問",
@@ -220,55 +220,127 @@ export const entries: Entry[] = [
       "選科、畢業要求、學生事務，不應要求學生先知道「應該去哪個網站」。",
       "Students should not need to know which university website to visit before they can ask for help.",
     ],
-    tags: ["Multi-agent", "Dify", "User research"],
-    metric: "74.2",
+    tags: ["Agentic RAG", "Dify", "Product evaluation"],
+    metric: "74.2 / 100",
     metricLabel: [
-      "系统可用性量表（SUS）得分",
-      "系統可用性量表（SUS）得分",
-      "System Usability Scale (SUS) score",
+      "26 位学生实测后的 SUS 可用性得分，高于 68 分常用基准",
+      "26 位學生實測後的 SUS 可用性得分，高於 68 分常用基準",
+      "SUS usability score from 26 student tests, above the common benchmark of 68",
     ],
     sections: [
       {
         title: [
-          "信息分散，问题却是连着的",
-          "資訊分散，問題卻是連着的",
-          "Fragmented information, connected questions",
+          "先把问题从学校的组织结构里解放出来",
+          "先把問題從學校的組織架構中解放出來",
+          "Start with the student, not the org chart",
         ],
         body: [
-          "学生的课程、毕业和事务问题横跨多个部门，人工咨询资源有限，原有问答工具也难以理解自然语言。我希望让学生从自己的问题出发，而不是从学校的组织结构出发。",
-          "學生的選科、畢業和事務問題跨越多個部門，人工諮詢資源有限，原有問答工具亦難以理解自然語言。我希望讓學生從自己的問題出發，而非從學校的組織架構出發。",
-          "Academic and administrative questions span multiple departments. Human support is limited and the previous chatbot struggled with natural language. I wanted the experience to begin with the student’s question, not the institution’s org chart.",
+          "选课、毕业要求与学生事务散落在院系文件、大学政策和学生事务网页里。学生往往不知道问题属于哪个部门；人工顾问则要反复查阅不同年份的文件。原有菜单式聊天机器人能指路，却难以理解自然语言和跨文件条件。产品目标由此确定：给学生一个统一入口，把可核对的答案送到问题发生的地方。",
+          "選科、畢業要求與學生事務散落在學系文件、大學政策及學生事務網頁。學生往往不知道問題屬於哪個部門；人工顧問則要反覆查閱不同年份的文件。原有選單式聊天機械人能夠指路，卻難以理解自然語言與跨文件條件。產品目標因此確立：給學生一個統一入口，把可核對的答案帶到問題發生的地方。",
+          "Course planning, graduation rules and student services live across departmental documents, university policies and service websites. Students may not know which office owns a question, while advisors repeatedly search cohort-specific files. The existing menu-based bot could point to pages but struggled with natural language and cross-document conditions. The product goal became clear: one entry point, with verifiable answers delivered where the question begins.",
+        ],
+        points: [
+          [
+            "核心用户包括本科生与学术顾问；两者共享知识来源，但需要不同的回答深度。",
+            "核心用戶包括本科生與學術顧問；兩者共用知識來源，但需要不同的回答深度。",
+            "The core users are undergraduates and academic advisors. They share sources but need different levels of detail.",
+          ],
+          [
+            "成功不只看回答是否流畅，还要看来源能否追溯、规则是否遵守、系统是否知道何时交给人。",
+            "成功不只看回答是否流暢，還要看來源能否追溯、規則是否遵守，以及系統是否知道何時交給人。",
+            "Success is more than fluent answers: sources must be traceable, policy rules respected, and uncertain cases handed to a person.",
+          ],
         ],
       },
       {
         title: [
-          "让系统会查，也知道何时不答",
-          "讓系統懂得查，也知道何時不答",
-          "Know how to retrieve—and when to defer",
+          "从一次失败的原型，改到三条知识路径",
+          "從一次失敗的原型，改成三條知識路徑",
+          "Turn a failed prototype into three knowledge paths",
         ],
         body: [
-          "使用 Dify 搭建多 Agent 工作流，整合院系、大学与学生事务知识；以 PDF 转 Markdown 和网页采集流程维护知识库。遇到模糊问题先澄清，超出范围时提供人工咨询路径，并把反馈用于完善知识库。",
-          "使用 Dify 建立多 Agent 工作流程，整合學系、大學與學生事務知識；以 PDF 轉 Markdown 及網頁擷取流程維護知識庫。遇到含糊問題先釐清，超出範圍時提供人工諮詢途徑，並以回饋完善知識庫。",
-          "I built multi-agent workflows in Dify, bringing together department, university and student-service knowledge through PDF-to-Markdown and web collection pipelines. Ambiguous queries trigger clarification; out-of-scope questions route to human support. Feedback informs knowledge-base updates.",
+          "第一版把所有材料塞进同一个知识库。相似课程表会互相干扰，跨条件问题甚至需要 2–5 分钟。问题不在模型够不够大，而在信息架构。新版将资料拆成 COMP 院系规则、全校通用要求与 SAO 学生服务三类；意图分类器先判断问题，再由确定性的路由进入对应知识库，减少上下文碰撞和无效检索。",
+          "第一版把所有資料放進同一個知識庫。相似的課程表會互相干擾，跨條件問題甚至需要 2–5 分鐘。問題不在模型是否夠大，而在資訊架構。新版把資料拆成 COMP 學系規則、全校通用要求與 SAO 學生服務三類；意圖分類器先判斷問題，再由確定性的路由進入對應知識庫，減少語境碰撞與無效檢索。",
+          "The first prototype put every document in one knowledge base. Similar study tables collided, and multi-condition questions could take two to five minutes. The problem was information architecture, not model size. I separated the content into COMP rules, university-wide requirements and SAO student services. An intent classifier identifies the request, then deterministic routing sends it to the right branch, reducing context collision and unnecessary retrieval.",
+        ],
+        points: [
+          [
+            "学生的院系、入学年份与角色随问题一同进入工作流，不必每次重新解释背景。",
+            "學生的學系、入學年份與角色會隨問題一同進入工作流程，不必每次重新交代背景。",
+            "Department, cohort and role travel with the question, so students do not have to repeat their context.",
+          ],
+          [
+            "检索结合关键词、语义搜索与重排序：课程编号依赖精确匹配，概念性提问则需要理解近义表达。",
+            "檢索結合關鍵字、語意搜尋與重新排序：科目編號依賴精確配對，概念性提問則需要理解近義表達。",
+            "Retrieval combines keyword search, semantic search and reranking: course codes need exact matches, while conceptual questions need meaning-aware retrieval.",
+          ],
         ],
       },
       {
         title: [
-          "把可用性也当作产品指标",
-          "把可用性亦視為產品指標",
-          "Treat usability as a product outcome",
+          "知识库不是上传文件，而是一条维护链路",
+          "知識庫不是上載文件，而是一條維護鏈路",
+          "A knowledge base is a maintenance workflow",
         ],
         body: [
-          "通过 30 道真实问题对比测试和约 70 名学生问卷进行验证。召回与简单问题准确性评估达到 85–90%，SUS 得分为 74.2；问卷中，对界面、知识与检索的满意反馈约为 90%。",
-          "透過 30 道真實問題對比測試及約 70 名學生問卷驗證。召回與簡單問題準確性評估達 85–90%，SUS 得分為 74.2；問卷對介面、知識及檢索的滿意回饋約為 90%。",
-          "Validation combined 30 real-question comparisons with a survey of approximately 70 students. Recall / simple-question accuracy evaluation reached 85–90%, with a SUS score of 74.2. Around 90% of survey feedback on the interface, knowledge and retrieval was positive.",
+          "政策来自网页，培养方案和课程表常藏在 PDF。直接切文本会破坏表格行列，让课程编号、学分与先修关系失去上下文。我设计了两项面向管理员的工具：网页采集平台负责批量或定点更新；PDF 转 Markdown 平台先保留标题与表格结构，再由人工复核后入库。不同入学年份的培养方案被拆成独立文件，避免相似表格被错误召回。",
+          "政策來自網頁，培養方案與課程表經常藏在 PDF。直接切割文字會破壞表格行列，令科目編號、學分與先修關係失去語境。我設計了兩項面向管理人員的工具：網頁擷取平台負責批量或定點更新；PDF 轉 Markdown 平台先保留標題與表格結構，再由人手覆核後放入知識庫。不同入學年份的培養方案拆成獨立文件，避免相似表格被錯誤檢索。",
+          "Policies live on web pages, while programme requirements and study patterns are often buried in PDFs. Plain text extraction breaks table structure and separates course codes, credits and prerequisites from their context. I designed two tools for administrators: a crawler for batch or targeted updates, and a PDF-to-Markdown workspace that preserves headings and tables before human review. Cohort-specific study patterns are stored separately to prevent similar tables from being retrieved for the wrong intake year.",
+        ],
+      },
+      {
+        title: [
+          "界面把可信度做成可见的交互",
+          "介面把可信度變成看得見的互動",
+          "Make trust visible in the interface",
+        ],
+        body: [
+          "学生从自然语言提问开始，回答附带来源与原文位置，便于立即核对。个人资料保存院系与入学年份，聊天记录跨会话保留。答案不完整或难以理解时，学生可在同一界面提交问题报告；系统保存上下文、通知工作人员，并把回复带回报告记录。信任不靠一句“由 AI 生成”的提示，而靠可追溯、可反馈、有人接手。",
+          "學生由自然語言提問開始，回答附上來源與原文位置，方便立即核對。個人資料保存學系與入學年份，對話記錄可跨會話保留。答案不完整或難以理解時，學生可在同一介面提交問題報告；系統保存語境、通知工作人員，並把回覆帶回報告記錄。信任不靠一句「由 AI 生成」的提示，而靠可追溯、可回饋、有人接手。",
+          "Students begin with a natural-language question. Each answer includes its source and location so it can be checked immediately. Profiles retain department and cohort, while conversation history persists across sessions. If an answer is incomplete or confusing, a student can report it in place; the system preserves the context, alerts staff and returns the reply to the report history. Trust comes from traceability, feedback and a visible human handoff—not a generic AI disclaimer.",
+        ],
+      },
+      {
+        title: [
+          "有些问题应该停下来，而不是继续生成",
+          "有些問題應該停下來，而不是繼續生成",
+          "Some questions should stop generation",
+        ],
+        body: [
+          "资料不足时，系统会追问入学年份或专业；检索不到可靠依据时，转向人工渠道。涉及心理困扰的表达不会进入普通知识检索，也不会尝试诊断，而是直接显示固定的校内辅导与紧急求助方式。这不是附加功能，而是产品边界：学术顾问可以降低找信息的成本，不能代替专业判断与危机支持。",
+          "資料不足時，系統會追問入學年份或專業；找不到可靠依據時，轉向人工渠道。涉及情緒困擾的表達不會進入一般知識檢索，也不會嘗試診斷，而是直接顯示固定的校內輔導及緊急求助方式。這不是附加功能，而是產品邊界：學術顧問可以降低尋找資訊的成本，不能取代專業判斷與危機支援。",
+          "When key information is missing, the system asks for a cohort or programme. When evidence is insufficient, it directs the student to a person. Distress-related language bypasses ordinary retrieval and never triggers diagnosis; it immediately presents fixed university counselling and emergency contacts. This is a product boundary, not an extra feature: the advisor can reduce information friction, but it cannot replace professional judgment or crisis support.",
+        ],
+      },
+      {
+        title: [
+          "用技术结果与真实使用一起验证",
+          "用技術結果與真實使用一同驗證",
+          "Validate technical quality and lived experience",
+        ],
+        body: [
+          "技术评测使用 30 道人工标注问题，覆盖简单查询、多条件判断、政策细节与安全边界。意图路由准确率为 93.3%，整体检索精度为 87%，简单问题正确率为 90%；复杂问题仍只有 67–80%，这类问题平均响应约 39.1 秒。26 位 COMP 本科生在校内面对面试用后，SUS 得分为 74.2。SUS 是一份包含 10 个问题、满分 100 的通用可用性量表，68 常被用作参考基准。85% 的参与者认为来源引用有助于核对答案，这是评价最高的一项。",
+          "技術評測使用 30 道人工標註問題，涵蓋簡單查詢、多條件判斷、政策細節與安全邊界。意圖路由準確率為 93.3%，整體檢索精準度為 87%，簡單問題正確率為 90%；複雜問題仍只有 67–80%，這類問題平均回應約 39.1 秒。26 位 COMP 本科生在校內面對面試用後，SUS 得分為 74.2。SUS 是一份包含 10 道題、滿分 100 的通用可用性量表，68 常被視為參考基準。85% 的參與者認為來源引用有助核對答案，這是評分最高的一項。",
+          "Technical evaluation used 30 human-annotated questions covering factual lookups, multi-condition reasoning, policy details and safety boundaries. Intent-routing accuracy reached 93.3%, overall retrieval precision 87%, and simple-query correctness 90%. Complex-query correctness remained at 67–80%; those questions averaged 39.1 seconds. After face-to-face sessions with 26 COMP undergraduates, the product scored 74.2 on SUS. SUS is a standard ten-question usability questionnaire scored out of 100; 68 is a commonly used benchmark. The strongest signal was trust: 85% said source citations helped them verify answers.",
+        ],
+        points: [
+          [
+            "结论不是“AI 已经代替顾问”，而是高频问题可以先被可靠分流，复杂问题仍需澄清、优化或人工处理。",
+            "結論不是「AI 已經取代顧問」，而是高頻問題可以先被可靠分流，複雜問題仍需釐清、優化或由人處理。",
+            "The result is not that AI replaces advisors. It can reliably triage common questions; complex cases still need clarification, iteration or human support.",
+          ],
+          [
+            "下一步优先改善跨条件推理与响应速度，并把问题报告转化为持续更新知识库的产品闭环。",
+            "下一步會優先改善跨條件推理與回應速度，並把問題報告轉化為持續更新知識庫的產品閉環。",
+            "Next, I would prioritize multi-condition reasoning and latency, then use issue reports as a continuous knowledge-base improvement loop.",
+          ],
         ],
       },
     ],
     note: [
-      "设计边界：涉及心理困扰等敏感问题时，重视专业支持路径，不把对话系统包装成专业人员的替代品。",
-      "設計邊界：涉及心理困擾等敏感問題時，重視專業支援途徑，不將對話系統包裝成專業人員的替代品。",
-      "Design boundary: for sensitive concerns such as emotional distress, prioritize professional support rather than presenting a chatbot as a substitute for a qualified person.",
+      "数据口径：评测结果来自 30 道标注问题与 26 位本科生的面对面试用；SUS 是可用性指标，不代表回答准确率。课堂照片用于呈现项目所处的真实学习环境，不代表照片中每位学生都参与了本次评测。",
+      "數據口徑：評測結果來自 30 道標註問題及 26 位本科生的面對面試用；SUS 是可用性指標，不代表回答準確率。課堂照片用於呈現項目所處的真實學習環境，不代表相中每位學生都參與了本次評測。",
+      "Measurement note: results come from 30 annotated questions and face-to-face tests with 26 undergraduates. SUS measures usability, not answer accuracy. The classroom photo shows the project’s learning context; it does not imply that every student pictured joined the evaluation.",
     ],
   },
   {

@@ -35,6 +35,209 @@ const glyphs = [
   "intent → experience",
 ];
 
+function AcademicFigure({
+  locale,
+  src,
+  number,
+  alt,
+  caption,
+  className = "",
+}: {
+  locale: Locale;
+  src: string;
+  number: string;
+  alt: Text;
+  caption: Text;
+  className?: string;
+}) {
+  return (
+    <figure className={`academic-figure ${className}`}>
+      <div className="academic-figure-bar">
+        <span>FIG. {number}</span>
+        <span>{t(locale, label("项目实录", "項目實錄", "Project evidence"))}</span>
+      </div>
+      <img src={asset(src)} alt={t(locale, alt)} loading="lazy" />
+      <figcaption>{t(locale, caption)}</figcaption>
+    </figure>
+  );
+}
+
+function AcademicAdvisorMedia({
+  locale,
+  slot,
+}: {
+  locale: Locale;
+  slot: "opening" | "architecture" | "workflow" | "knowledge" | "handoff" | "results";
+}) {
+  if (slot === "opening") {
+    return (
+      <div className="academic-opening">
+        <AcademicFigure
+          locale={locale}
+          number="01"
+          src="/case-assets/academic-advisor/advising-ui.webp"
+          alt={label(
+            "学术顾问聊天界面，回答带有来源引用",
+            "學術顧問聊天介面，答案附有來源引用",
+            "Academic advisor chat interface with cited sources",
+          )}
+          caption={label(
+            "学生端主界面：自然语言提问、来源引用与问题报告处在同一条体验路径中。",
+            "學生端主介面：自然語言提問、來源引用與問題報告位於同一條體驗路徑。",
+            "Student-facing interface: natural-language questions, source citations and issue reporting share one journey.",
+          )}
+        />
+        <AcademicFigure
+          locale={locale}
+          number="02"
+          src="/case-assets/academic-advisor/classroom.webp"
+          alt={label(
+            "香港理工大学工业中心的 AI 拓展与实践课堂",
+            "香港理工大學工業中心的 AI 拓展與實踐課堂",
+            "An AI extension and practice class at the PolyU Industrial Centre",
+          )}
+          caption={label(
+            "真实学习情境：学生在 PolyU Industrial Centre 参与 AI 拓展与实践课程。",
+            "真實學習情境：學生在 PolyU Industrial Centre 參與 AI 拓展與實踐課程。",
+            "Real learning context: students in an AI extension and practice class at the PolyU Industrial Centre.",
+          )}
+          className="academic-classroom"
+        />
+      </div>
+    );
+  }
+
+  if (slot === "architecture") {
+    return (
+      <AcademicFigure
+        locale={locale}
+        number="03"
+        src="/case-assets/academic-advisor/system-architecture.webp"
+        alt={label(
+          "学术顾问系统架构图",
+          "學術顧問系統架構圖",
+          "Academic advisor system architecture",
+        )}
+        caption={label(
+          "系统由学生端顾问、知识维护工具与共享数据层组成；产品体验与后台更新流程被当作一个整体设计。",
+          "系統由學生端顧問、知識維護工具及共享資料層組成；產品體驗與後台更新流程被視為一個整體。",
+          "The system combines the student advisor, knowledge-maintenance tools and a shared data layer—one product across frontstage and backstage work.",
+        )}
+      />
+    );
+  }
+
+  if (slot === "workflow") {
+    return (
+      <AcademicFigure
+        locale={locale}
+        number="04"
+        src="/case-assets/academic-advisor/agent-workflow.webp"
+        alt={label(
+          "Dify 中的学术顾问 Agent 工作流",
+          "Dify 中的學術顧問 Agent 工作流程",
+          "Academic advisor agent workflow in Dify",
+        )}
+        caption={label(
+          "实际 Dify 工作流：意图分类后进入 COMP、全校要求或 SAO 分支；信息不足则进入澄清与安全兜底。",
+          "實際 Dify 工作流程：意圖分類後進入 COMP、全校要求或 SAO 分支；資料不足則進入釐清與安全後備。",
+          "The production Dify workflow routes intent to COMP, university-wide or SAO branches; missing context enters clarification and safety fallback.",
+        )}
+      />
+    );
+  }
+
+  if (slot === "knowledge") {
+    return (
+      <div className="academic-knowledge">
+        <AcademicFigure
+          locale={locale}
+          number="05"
+          src="/case-assets/academic-advisor/dataset-pipeline.webp"
+          alt={label(
+            "知识库构建流程图",
+            "知識庫建立流程圖",
+            "Knowledge-base construction pipeline",
+          )}
+          caption={label(
+            "两种资料入口、一套结构化处理方式、三个按使用场景划分的知识库。",
+            "兩種資料入口、一套結構化處理方式、三個按使用情境劃分的知識庫。",
+            "Two source types, one structured preparation process and three knowledge bases organized by use case.",
+          )}
+        />
+        <div className="academic-duo">
+          <AcademicFigure
+            locale={locale}
+            number="06A"
+            src="/case-assets/academic-advisor/pdf-to-markdown.webp"
+            alt={label(
+              "PDF 转 Markdown 管理界面",
+              "PDF 轉 Markdown 管理介面",
+              "PDF-to-Markdown administration interface",
+            )}
+            caption={label(
+              "PDF 转 Markdown：批量处理培养方案，保留标题与表格后交给管理员复核。",
+              "PDF 轉 Markdown：批量處理培養方案，保留標題與表格後交由管理人員覆核。",
+              "PDF to Markdown: batch-process programme documents, preserve structure, then send them for staff review.",
+            )}
+          />
+          <AcademicFigure
+            locale={locale}
+            number="06B"
+            src="/case-assets/academic-advisor/web-crawler.webp"
+            alt={label(
+              "网页采集平台界面",
+              "網頁擷取平台介面",
+              "Web-crawling platform interface",
+            )}
+            caption={label(
+              "网页采集：支持站点地图批量采集与单页定点更新，降低政策维护成本。",
+              "網頁擷取：支援網站地圖批量擷取及單頁定點更新，降低政策維護成本。",
+              "Web collection: sitemap batches and targeted page updates reduce the cost of keeping policies current.",
+            )}
+          />
+        </div>
+      </div>
+    );
+  }
+
+  if (slot === "handoff") {
+    return (
+      <AcademicFigure
+        locale={locale}
+        number="07"
+        src="/case-assets/academic-advisor/issue-report.webp"
+        alt={label(
+          "学生问题报告与处理状态界面",
+          "學生問題報告與處理狀態介面",
+          "Student issue reports and resolution status interface",
+        )}
+        caption={label(
+          "人工接手不是一句提示：问题、类别、处理状态与回复都进入可追踪的记录。",
+          "人工接手不是一句提示：問題、類別、處理狀態與回覆都進入可追蹤的記錄。",
+          "Human handoff is a traceable workflow: the issue, category, status and response stay visible.",
+        )}
+      />
+    );
+  }
+
+  return (
+    <div className="academic-results" aria-label={t(locale, label("评测结果", "評測結果", "Evaluation results"))}>
+      {[
+        ["93.3%", label("意图路由准确率", "意圖路由準確率", "Intent-routing accuracy")],
+        ["87%", label("整体检索精度", "整體檢索精準度", "Overall retrieval precision")],
+        ["85%", label("认为引用有助核对", "認為引用有助核對", "Said citations aid verification")],
+        ["26", label("面对面学生试用", "面對面學生試用", "Face-to-face student tests")],
+      ].map(([value, text]) => (
+        <div key={value as string}>
+          <strong>{value as string}</strong>
+          <span>{t(locale, text as Text)}</span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 function AsciiFlower() {
   const rows = Array.from({ length: 29 }, (_, y) =>
     Array.from({ length: 59 }, (_, x) => {
@@ -789,6 +992,9 @@ export default function Editor({
                     ↗
                   </span>
                 </div>
+                {entry.id === "academic-advisor" && (
+                  <AcademicAdvisorMedia locale={locale} slot="opening" />
+                )}
                 {entry.id === "recruiting-agent" && (
                   <div
                     className="pipeline"
@@ -816,16 +1022,33 @@ export default function Editor({
                 )}
                 <div className="case-sections">
                   {entry.sections.map((section, i) => (
-                    <section className="case-section" key={i}>
-                      <span className="section-index">0{i + 1}</span>
-                      <div>
-                        <h2>{tr(section.title)}</h2>
-                        <p>{tr(section.body)}</p>
-                        {section.points?.map((point, j) => (
-                          <p key={j}>{tr(point)}</p>
-                        ))}
-                      </div>
-                    </section>
+                    <div className="case-chapter" key={i}>
+                      <section className="case-section">
+                        <span className="section-index">0{i + 1}</span>
+                        <div>
+                          <h2>{tr(section.title)}</h2>
+                          <p>{tr(section.body)}</p>
+                          {section.points?.map((point, j) => (
+                            <p key={j}>{tr(point)}</p>
+                          ))}
+                        </div>
+                      </section>
+                      {entry.id === "academic-advisor" && i === 0 && (
+                        <AcademicAdvisorMedia locale={locale} slot="architecture" />
+                      )}
+                      {entry.id === "academic-advisor" && i === 1 && (
+                        <AcademicAdvisorMedia locale={locale} slot="workflow" />
+                      )}
+                      {entry.id === "academic-advisor" && i === 2 && (
+                        <AcademicAdvisorMedia locale={locale} slot="knowledge" />
+                      )}
+                      {entry.id === "academic-advisor" && i === 3 && (
+                        <AcademicAdvisorMedia locale={locale} slot="handoff" />
+                      )}
+                      {entry.id === "academic-advisor" && i === 5 && (
+                        <AcademicAdvisorMedia locale={locale} slot="results" />
+                      )}
+                    </div>
                   ))}
                 </div>
                 {entry.note && (

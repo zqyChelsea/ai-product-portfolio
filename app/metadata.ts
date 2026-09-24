@@ -8,7 +8,7 @@ import {
   t,
   type Locale,
 } from "./content";
-const origin = "https://zqyRiver.github.io/ai-product-portfolio";
+const origin = "https://zqyChelsea.github.io/ai-product-portfolio";
 export function pageMetadata(locale: Locale, file: string): Metadata {
   const title =
     file === "readme"
