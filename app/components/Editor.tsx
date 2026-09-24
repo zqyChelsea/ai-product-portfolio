@@ -384,7 +384,7 @@ export default function Editor({
                       )}
                       <span className="cursor" aria-hidden="true" />
                     </h1>
-                    <p className="intro-name">Chelsea</p>
+                    <p className="intro-name">River</p>
                     <p className="hero-description">
                       {tr(
                         label(
@@ -445,7 +445,7 @@ export default function Editor({
                     <p>
                       {tr(
                         label(
-                          "美团 · Code Agent 长程与多轮评测",
+                          "实习经历 · Code Agent 长程与多轮评测",
                           "美團 · Code Agent 長程與多輪評測",
                           "Meituan · Long-horizon & multi-turn evals",
                         ),
@@ -463,7 +463,7 @@ export default function Editor({
                         ),
                       )}
                     </strong>
-                    <p>Python · TypeScript · React</p>
+                    <p>在真实案例中锻炼工程能力</p>
                   </div>
                 </div>
                 <div className="section-heading">
@@ -568,9 +568,9 @@ export default function Editor({
                   )}
                   subtitle={tr(
                     label(
-                      "你也可以叫我 Chelsea。产品、代码，还有真实的生活。",
-                      "你也可以叫我 Chelsea。產品、程式碼，還有真實的生活。",
-                      "You can call me Chelsea. Product, code, and a life beyond both.",
+                      "你也可以叫我 River。我感兴趣的职业方向是AI产品经理，希望能做出真正在用户情景中能发挥价值的产品。",
+                      "你也可以叫我 River。產品、程式碼，還有真實的生活。",
+                      "You can call me River. Product, code, and a life beyond both.",
                     ),
                   )}
                 />
@@ -611,7 +611,7 @@ export default function Editor({
                   <p>
                     {tr(
                       label(
-                        "我的背景是计算机科学与应用数学，实践横跨 AI 产品、工程开发和模型评测。我喜欢把模糊的需求拆开，找到真正的问题，再通过原型和实验一步步验证。",
+                        "我的背景是计算机科学与应用数学，在AI产品设计、前后端开发、模型评测等方面均有真实的工程经历。我喜欢从现实生活发掘潜在的痛点，把模糊的需求拆开，找到真正的问题，再通过原型和实验一步步验证。",
                         "我的背景是電腦科學與應用數學，實踐涵蓋 AI 產品、工程開發和模型評測。我喜歡拆解模糊的需求，找到真正的問題，再透過原型和實驗逐步驗證。",
                         "My background is in computer science and applied mathematics. My work spans AI products, engineering and model evaluation. I like unpacking ambiguous needs, finding the real problem, then testing an approach through prototypes and experiments.",
                       ),
@@ -620,7 +620,7 @@ export default function Editor({
                   <p>
                     {tr(
                       label(
-                        "工作之外，我热爱历史文化，也喜欢动漫和游戏；有空就到户外走走。不同的时代、故事和生活方式，让我愿意多听一句「为什么」，而不是急着替别人定义需求。",
+                        "工作之外，我热爱历史文化，也喜欢动漫和音乐；有空时我会到处旅游，沉浸式体验当地的生活。我喜爱探寻不同的时代、故事和生活方式，让我愿意聆听他人的背景和想法，而不是急着替别人定义需求。",
                         "工作以外，我熱愛歷史文化，也喜歡動漫和遊戲；有空便到戶外走走。不同的時代、故事和生活方式，讓我願意多聽一句「為甚麼」，而非急着替別人定義需求。",
                         "Outside work, I love history and culture, anime and games, and getting outdoors. Different eras, stories and ways of living encourage me to ask one more “why” before assuming what someone needs.",
                       ),
@@ -629,7 +629,7 @@ export default function Editor({
                   <p>
                     {tr(
                       label(
-                        "我在意产品的人文关怀：表达是否容易理解，选择是否留在用户手里，系统不确定时是否坦诚。这些不是产品完成后的修饰，而是设计一开始就该考虑的事。",
+                        "我在意产品的人文关怀：产品的呈现与交互是否容易理解，是否能持续解决用户可能面临的各种问题，系统在真实应用中所能触及的边界，以及能否真正做到让用户信任、对用户负责。这些不应该是产品完成后的修饰，而是设计一开始就该考虑的事情。",
                         "我在意產品的人文關懷：表達是否容易理解，選擇是否留在用戶手中，系統不確定時是否坦誠。這些不是產品完成後的修飾，而是設計一開始就應考慮的事。",
                         "Human care matters in the details: is the language understandable, does the user retain control, and is the system honest about uncertainty? These belong at the start of design, not as finishing touches.",
                       ),
@@ -647,15 +647,15 @@ export default function Editor({
                         alt={tr(
                           n === 1
                             ? label(
-                                "旅行中的张沁烨",
-                                "旅途中的張沁燁",
-                                "Qinye on a trip",
-                              )
+                              "旅行中的张沁烨",
+                              "旅途中的張沁燁",
+                              "Qinye on a trip",
+                            )
                             : label(
-                                "演出现场的张沁烨",
-                                "演出現場的張沁燁",
-                                "Qinye at a live show",
-                              ),
+                              "演出现场的张沁烨",
+                              "演出現場的張沁燁",
+                              "Qinye at a live show",
+                            ),
                         )}
                       />
                       <figcaption>
@@ -663,15 +663,15 @@ export default function Editor({
                         {tr(
                           n === 1
                             ? label(
-                                "在旅行中发现不同。",
-                                "在旅途中發現不同。",
-                                "Finding new perspectives.",
-                              )
+                              "在旅行中发现不同。",
+                              "在旅途中發現不同。",
+                              "Finding new perspectives.",
+                            )
                             : label(
-                                "为喜欢的故事和音乐奔赴。",
-                                "為喜歡的故事和音樂奔赴。",
-                                "Making time for what I love.",
-                              ),
+                              "为喜欢的故事和音乐奔赴。",
+                              "為喜歡的故事和音樂奔赴。",
+                              "Making time for what I love.",
+                            ),
                         )}
                       </figcaption>
                     </figure>
@@ -915,12 +915,12 @@ export default function Editor({
               .toLowerCase()
               .includes(query.toLowerCase()),
           ) && (
-            <p>
-              {tr(
-                label("没有匹配的文件", "沒有相符的檔案", "No matching files"),
-              )}
-            </p>
-          )}
+              <p>
+                {tr(
+                  label("没有匹配的文件", "沒有相符的檔案", "No matching files"),
+                )}
+              </p>
+            )}
         </div>
       </dialog>
       {intro && (
@@ -1024,7 +1024,7 @@ function Resume({ locale }: { locale: Locale }) {
     <>
       <PageHeading
         eyebrow="RÉSUMÉ / UPDATED 2026.09"
-        title={`${tr(copy.name)} / Chelsea`}
+        title={`${tr(copy.name)} / River`}
         subtitle={tr(
           label(
             "AI 产品经理。以用户问题为起点，结合产品设计、工程实现与评测，让想法走到可用。",

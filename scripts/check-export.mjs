@@ -55,7 +55,7 @@ const publicHosts = new Set([
   "github.com",
   "www.linkedin.com",
   "doi.org",
-  "zqychelsea.github.io",
+  "zqyRiver.github.io",
 ]);
 for (const page of pages) {
   for (const match of readFileSync(page, "utf8").matchAll(

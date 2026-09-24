@@ -6,8 +6,8 @@ export const isLocale = (value: string): value is Locale =>
   locales.includes(value as Locale);
 export const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 export const asset = (path: string) => `${basePath}${path}`;
-export const email = "zqyChelsea@gmail.com";
-export const github = "https://github.com/zqyChelsea";
+export const email = "zqyRiver@gmail.com";
+export const github = "https://github.com/zqyRiver";
 export const linkedin = "https://www.linkedin.com/in/qinye-zhang-247435295/";
 
 export type Section = { title: Text; body: Text; points?: Text[] };
@@ -193,7 +193,7 @@ export const entries: Entry[] = [
     file: "academic-advisor.md",
     category: "projects",
     date: "2025.10 — 2026.05",
-    title: ["Agent 学术顾问", "Agent 學術顧問", "An academic advisor agent"],
+    title: ["香港理工大学Agent学术顾问", "Agent 學術顧問", "An academic advisor agent"],
     role: [
       "独立设计与开发",
       "獨立設計與開發",
@@ -538,7 +538,7 @@ export const copy = {
   ] as Text,
   projects: ["项目", "項目", "projects"] as Text,
   experience: ["实习经历", "實習經歷", "experience"] as Text,
-  personal: ["个人", "個人", "personal"] as Text,
+  personal: ["关于我", "個人", "personal"] as Text,
   explore: ["打开重点项目", "開啟重點項目", "Explore the work"] as Text,
   resume: ["查看简历", "查看履歷", "View résumé"] as Text,
   search: ["搜索文件…", "搜尋檔案…", "Search files…"] as Text,
