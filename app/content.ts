@@ -168,6 +168,13 @@ export const entries: Entry[] = [
           "課程講義包含表格、公式和跨章節關聯。單純切分文字容易丟失結構；通用模型亦可能引入課外知識，令術語和授課內容不一致。我將課程忠實度、上下文連貫性與回應延遲一同納入設計。",
           "Course materials mix tables, formulas and cross-chapter dependencies. Plain text splitting loses structure, while a general model may introduce inconsistent terminology. I considered course fidelity, coherence and latency together.",
         ],
+        points: [
+          [
+            "我没有先问“模型能生成什么”，而是从学生最容易卡住的跨章节追问出发：答案需要引用哪一段、缺了什么上下文、什么时候应该承认材料不足。",
+            "我沒有先問「模型能生成甚麼」，而是從學生最容易卡住的跨章節追問出發：答案需要引用哪一段、欠缺甚麼語境、何時應該承認資料不足。",
+            "I did not begin with what the model could generate. I began with the cross-chapter questions that tend to block students: which passage should support the answer, what context is missing, and when should the system admit that the material is insufficient?",
+          ],
+        ],
       },
       {
         title: [
@@ -183,6 +190,18 @@ export const entries: Entry[] = [
       },
       {
         title: [
+          "让教师能够配置，而不是等待工程师修改",
+          "讓教師可以自行配置，而非等待工程師修改",
+          "Let educators configure the experience",
+        ],
+        body: [
+          "GPTutor 不只是一只聊天机器人。以眼科实践模拟为例，课程团队可以在后台设置场景背景、检查动作、动作说明与预期反馈。教学意图被拆成可编辑字段，教师能够调整任务，学生则在更具体的情境里练习判断。模型能力因此进入课程设计，而不是停留在一个通用对话框里。",
+          "GPTutor 不只是一個聊天機械人。以眼科實踐模擬為例，課程團隊可以在後台設定場景背景、檢查動作、動作說明及預期回饋。教學意圖被拆成可編輯欄位，教師可以調整任務，學生則在更具體的情境中練習判斷。模型能力因而進入課程設計，而非停留在一個通用對話框內。",
+          "GPTutor is more than a chatbot. In an ophthalmic practice simulation, for example, course teams can configure the setting, examination actions, instructions and expected feedback. Teaching intent becomes editable fields: educators can adjust the task, while students practise judgment in a concrete scenario. The model becomes part of course design instead of remaining a generic chat box.",
+        ],
+      },
+      {
+        title: [
           "用题目与学生反馈交叉验证",
           "以題目與學生回饋交叉驗證",
           "Evaluate answers and the learning experience",
@@ -191,6 +210,13 @@ export const entries: Entry[] = [
           "在 50 道跨章节问题上，回答相关性与引用正确性评估由 70% 提升至 91%。另有 300 名学生参与问卷，80–85% 认为准确性与连贯性有所改善。方案已在部分通识和低年级课程上线。",
           "在 50 道跨章節問題上，回答相關性與引用正確性評估由 70% 提升至 91%。另有 300 名學生參與問卷，80–85% 認為準確性與連貫性有所改善。方案已於部分通識及低年級課程上線。",
           "On 50 cross-chapter questions, the answer relevance / citation correctness evaluation rose from 70% to 91%. In a separate survey of 300 students, 80–85% reported better accuracy and coherence. The approach was deployed in selected general-education and early-year courses.",
+        ],
+        points: [
+          [
+            "项目也以现场 Demo 的形式参与 Global AI Forum 展示。公开展示迫使我们把复杂的技术路径讲成一段几分钟内就能看懂、能够亲手体验的产品故事。",
+            "項目亦以現場 Demo 形式參與 Global AI Forum 展示。公開展示促使我們把複雜的技術路徑，整理成一段數分鐘內能夠理解、可以親手體驗的產品故事。",
+            "The project was also demonstrated at the Global AI Forum. A public demo forced us to turn a complex technical path into a product story that visitors could understand and try within minutes.",
+          ],
         ],
       },
     ],
@@ -499,6 +525,13 @@ export const entries: Entry[] = [
           "遊戲回饋分散於多個渠道，人工整理慢，亦容易錯過關鍵問題。我參與建立面向遊戲工作室的 B2B 看板，整合多渠道收集、主題分類和摘要推送。",
           "Player feedback was fragmented and slow to aggregate manually. I helped build a B2B dashboard for game studios combining multi-channel collection, issue classification and summary delivery.",
         ],
+        points: [
+          [
+            "真正稀缺的不是更多聊天记录，而是能保留版本、模块和玩家语气的可行动信号。产品团队需要看见“问题为什么重要”，而不只是某个词出现了多少次。",
+            "真正稀缺的不是更多聊天記錄，而是能保留版本、模組及玩家語氣的可行動訊號。產品團隊需要看見「問題為何重要」，而不只是某個詞出現了多少次。",
+            "The scarce resource was not more chat logs, but actionable signals that retained version, feature and player context. Product teams needed to understand why an issue mattered—not merely how often a word appeared.",
+          ],
+        ],
       },
       {
         title: [
@@ -510,6 +543,18 @@ export const entries: Entry[] = [
           "使用 OneBot、TypeScript 与 Node.js 实现 QQ、Discord 机器人及看板，支持无需 @ 机器人的后台收集。通过轻量 NLP 与规则去噪，将反馈归入平衡性、性能、付费体验等主题，并支持按版本和模块查看。",
           "使用 OneBot、TypeScript 與 Node.js 實作 QQ、Discord 機械人及看板，支援毋須 @ 機械人的後台收集。以輕量 NLP 和規則去除雜訊，將回饋分為平衡性、效能、付費體驗等主題，並支援按版本及模組查看。",
           "Using OneBot, TypeScript and Node.js, I built QQ / Discord bots and dashboard features with passive collection. Lightweight NLP and rules filtered noise and classified balance, performance and payment-experience feedback, with version- and module-level views.",
+        ],
+      },
+      {
+        title: [
+          "产品工作也发生在会议与展会之间",
+          "產品工作亦發生在會議與展會之間",
+          "Product work happens beyond the editor",
+        ],
+        body: [
+          "线上协作让团队持续对齐采集范围、分类口径与交付节奏；轻松的线下相处，也让问题更容易被坦率地提出。到了 ChinaJoy，屏幕里的“玩家反馈”变成了真实的人、语气和现场期待。那段经历提醒我：理解用户不能只看整理好的数据，也要走进产品实际发生的环境。",
+          "線上協作讓團隊持續對齊收集範圍、分類口徑與交付節奏；輕鬆的線下相處，也令問題更容易被坦率提出。到了 ChinaJoy，螢幕裏的「玩家回饋」變成真實的人、語氣與現場期待。那段經歷提醒我：理解用戶不能只看整理好的資料，亦要走進產品實際發生的環境。",
+          "Remote collaboration kept the team aligned on collection scope, classification language and delivery rhythm. Informal time together made it easier to raise problems honestly. At ChinaJoy, “player feedback” became real people, expressions and expectations. The experience reminded me that understanding users requires more than reading cleaned data; product teams also need to enter the environment where the experience happens.",
         ],
       },
       {

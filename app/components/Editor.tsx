@@ -238,6 +238,107 @@ function AcademicAdvisorMedia({
   );
 }
 
+function GptutorEvidence({ locale }: { locale: Locale }) {
+  return (
+    <div className="project-photo-duo gptutor-evidence">
+      <AcademicFigure
+        locale={locale}
+        number="01"
+        src="/case-assets/gptutor/simulation-editor.webp"
+        alt={label(
+          "GPTutor 实践模拟配置后台",
+          "GPTutor 實踐模擬配置後台",
+          "GPTutor practice-simulation configuration interface",
+        )}
+        caption={label(
+          "产品后台：课程团队可以配置场景背景、检查动作、动作说明与预期反馈。",
+          "產品後台：課程團隊可以設定場景背景、檢查動作、動作說明及預期回饋。",
+          "Product workspace: course teams can configure the setting, examination actions, instructions and expected feedback.",
+        )}
+      />
+      <AcademicFigure
+        locale={locale}
+        number="02"
+        src="/case-assets/gptutor/forum-showcase.webp"
+        alt={label(
+          "GPTutor 在 Global AI Forum 的现场展示",
+          "GPTutor 在 Global AI Forum 的現場展示",
+          "GPTutor demonstration at the Global AI Forum",
+        )}
+        caption={label(
+          "从后台到现场：GPTutor 以可操作 Demo 参与 Global AI Forum 展示。",
+          "從後台到現場：GPTutor 以可操作 Demo 參與 Global AI Forum 展示。",
+          "From workspace to public demo: GPTutor was presented as a hands-on experience at the Global AI Forum.",
+        )}
+      />
+    </div>
+  );
+}
+
+function VivacityEvidence({
+  locale,
+  slot,
+}: {
+  locale: Locale;
+  slot: "collaboration" | "field";
+}) {
+  if (slot === "collaboration") {
+    return (
+      <AcademicFigure
+        locale={locale}
+        number="01"
+        src="/case-assets/vivacity/remote-collaboration.webp"
+        alt={label(
+          "Vivacity 团队线上与线下协作会议",
+          "Vivacity 團隊線上與線下協作會議",
+          "Vivacity team working across remote and in-person collaboration",
+        )}
+        caption={label(
+          "团队协作现场：线上成员与线下成员一起对齐产品与开发进度；画面中的姓名标签已隐去。",
+          "團隊協作現場：線上成員與線下成員共同對齊產品及開發進度；畫面中的姓名標籤已隱去。",
+          "Team collaboration: remote and in-person teammates align product and development work. Visible name labels have been removed.",
+        )}
+        className="vivacity-collaboration"
+      />
+    );
+  }
+
+  return (
+    <div className="project-photo-duo vivacity-field">
+      <AcademicFigure
+        locale={locale}
+        number="02"
+        src="/case-assets/vivacity/team-moment.webp"
+        alt={label(
+          "Vivacity 团队实习期间的线下相聚",
+          "Vivacity 團隊實習期間的線下相聚",
+          "An informal Vivacity team moment during the internship",
+        )}
+        caption={label(
+          "工作之外的团队时刻：顺畅协作也来自日常沟通与彼此信任。",
+          "工作以外的團隊時刻：順暢協作亦來自日常溝通與彼此信任。",
+          "A team moment beyond the work itself: good collaboration also grows from everyday communication and trust.",
+        )}
+      />
+      <AcademicFigure
+        locale={locale}
+        number="03"
+        src="/case-assets/vivacity/chinajoy.webp"
+        alt={label(
+          "ChinaJoy 2025 展会现场",
+          "ChinaJoy 2025 展會現場",
+          "ChinaJoy 2025 exhibition floor",
+        )}
+        caption={label(
+          "ChinaJoy 2025：离开数据看板，回到玩家、内容与游戏文化真实发生的现场。",
+          "ChinaJoy 2025：離開資料看板，回到玩家、內容與遊戲文化真實發生的現場。",
+          "ChinaJoy 2025: stepping beyond the dashboard into the environment where players, content and game culture meet.",
+        )}
+      />
+    </div>
+  );
+}
+
 function AsciiFlower() {
   const rows = Array.from({ length: 29 }, (_, y) =>
     Array.from({ length: 59 }, (_, x) => {
@@ -995,6 +1096,9 @@ export default function Editor({
                 {entry.id === "academic-advisor" && (
                   <AcademicAdvisorMedia locale={locale} slot="opening" />
                 )}
+                {entry.id === "vivacity" && (
+                  <VivacityEvidence locale={locale} slot="collaboration" />
+                )}
                 {entry.id === "recruiting-agent" && (
                   <div
                     className="pipeline"
@@ -1047,6 +1151,12 @@ export default function Editor({
                       )}
                       {entry.id === "academic-advisor" && i === 5 && (
                         <AcademicAdvisorMedia locale={locale} slot="results" />
+                      )}
+                      {entry.id === "gptutor" && i === 2 && (
+                        <GptutorEvidence locale={locale} />
+                      )}
+                      {entry.id === "vivacity" && i === 2 && (
+                        <VivacityEvidence locale={locale} slot="field" />
                       )}
                     </div>
                   ))}

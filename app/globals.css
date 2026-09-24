@@ -920,6 +920,34 @@ button:disabled {
   object-fit: cover;
   object-position: top center;
 }
+.project-photo-duo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin: 0 0 46px;
+}
+.project-photo-duo .academic-figure {
+  min-width: 0;
+  margin: 0;
+}
+.gptutor-evidence img {
+  aspect-ratio: 0.73 / 1;
+  object-fit: cover;
+  object-position: top center;
+}
+.vivacity-collaboration img {
+  aspect-ratio: 16 / 8.3;
+  object-fit: cover;
+  object-position: center;
+}
+.vivacity-field {
+  grid-template-columns: minmax(0, 1.35fr) minmax(220px, 0.65fr);
+}
+.vivacity-field img {
+  height: 420px;
+  object-fit: cover;
+  object-position: center;
+}
 .academic-results {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -1601,6 +1629,9 @@ figcaption {
   .academic-opening {
     grid-template-columns: 1fr;
   }
+  .vivacity-field img {
+    height: 330px;
+  }
   .academic-opening .academic-classroom img {
     aspect-ratio: 16 / 9;
     object-position: center 27%;
@@ -1914,6 +1945,17 @@ figcaption {
   }
   .academic-duo {
     grid-template-columns: 1fr;
+  }
+  .project-photo-duo {
+    grid-template-columns: 1fr;
+    margin-bottom: 30px;
+  }
+  .gptutor-evidence img {
+    aspect-ratio: auto;
+  }
+  .vivacity-field img {
+    height: auto;
+    max-height: 520px;
   }
   .academic-figure {
     margin: 10px 0 30px;
