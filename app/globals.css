@@ -798,6 +798,23 @@ button:disabled {
   font-size: 43px;
   color: #9bb774;
 }
+.agent-project-bridge {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  padding: clamp(25px, 3vw, 42px);
+  margin: 0 0 35px;
+  border-radius: 18px;
+  background: radial-gradient(circle at 95% 0%, #dbe8ff, transparent 42%), linear-gradient(115deg, #edf3ff, #f7faff);
+  border: 1px solid #d4e1f8;
+}
+.agent-project-bridge span { display: block; font: 10px var(--mono); letter-spacing: .08em; color: #4270cb; }
+.agent-project-bridge h2 { font-size: clamp(22px, 2.8vw, 34px); line-height: 1.25; letter-spacing: -.045em; margin: 12px 0; }
+.agent-project-bridge p { max-width: 610px; color: #5f718e; font-size: 13px; line-height: 1.8; }
+.agent-project-bridge a { flex: none; padding: 13px 18px; border-radius: 10px; background: #315ff4; color: white; font-size: 12px; font-weight: 700; white-space: nowrap; }
+.agent-project-bridge a:hover { background: #214fcf; }
+@media (max-width: 700px) { .agent-project-bridge { align-items: stretch; flex-direction: column; } .agent-project-bridge a { text-align: center; } }
 .kansai-demo {
   margin: 0 0 46px;
   border: 1px solid #d9e2f0;

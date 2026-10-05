@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "vinext dev",
     "build": "vinext build",
-    "build:github": "DEPLOY_TARGET=github next build",
+    "build:github": "DEPLOY_TARGET=github next build && node travel-agent/scripts/export-static.mjs",
     "start": "vinext start",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next"
   },

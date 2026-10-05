@@ -49,21 +49,21 @@ export const entries: Entry[] = [
       "Kansai on a student budget",
     ],
     role: [
-      "独立产品研究 · 交互原型 · 前端实现",
-      "獨立產品研究 · 互動原型 · 前端實作",
-      "Independent product research · Interactive prototype · Front-end",
+      "独立产品研究 · Agent 应用 · 全栈实现",
+      "獨立產品研究 · Agent 應用 · 全端實作",
+      "Independent product research · Agent app · Full-stack",
     ],
     intro: [
       "以香港出发、独游大阪五天的学生视角，重新思考 AI 行程规划：先确认预算、公共交通与周边城市，再把灵感变成可执行的路线。",
       "從香港出發、獨遊大阪五天的學生視角，重新思考 AI 行程規劃：先確認預算、公共交通及周邊城市，再把靈感變成可執行的路線。",
       "A five-day solo trip from Hong Kong to Osaka reframed as a planning problem: establish budget, transit and side trips before generating an itinerary.",
     ],
-    tags: ["Travel AI", "Product discovery", "Interactive MVP"],
+    tags: ["Travel AI", "Product discovery", "Agent workflow"],
     metric: "5 DAYS",
     metricLabel: [
-      "可操作的关西行程原型；非 Trip.com 官方产品",
-      "可操作的關西行程原型；並非 Trip.com 官方產品",
-      "An interactive Kansai planning concept; not a Trip.com product",
+      "独立 Agent 应用与五日行程案例；非 Trip.com 官方产品",
+      "獨立 Agent 應用與五日行程案例；並非 Trip.com 官方產品",
+      "A standalone agent app and five-day case; not a Trip.com product",
     ],
     sections: [
       {
@@ -112,11 +112,19 @@ export const entries: Entry[] = [
         ],
       },
       {
-        title: ["把概念做成可试的 MVP", "把概念做成可試的 MVP", "An MVP you can actually try"],
+        title: ["把概念做成可运行的应用", "把概念做成可運行的應用", "Build an application, not a static mock-up"],
         body: [
-          "上方原型没有接入 Trip.com 数据。它用透明的规则重新编排五日示例路线：可切换周边城市与动漫兴趣、钉住必去景点，并输入自己查到的机票和酒店总价，立刻看剩余预算。没有接入库存的地方明确显示「待核实」，不伪造实时价格或通勤分钟数。",
-          "上方原型並未接入 Trip.com 數據。它以透明規則重排五日示例路線：可切換周邊城市與動漫興趣、釘選必去景點，並輸入自己查到的機票及酒店總價，立即查看餘下預算。未接入庫存的地方清楚標示「待核實」，不虛構即時價格或交通分鐘數。",
-          "The prototype above does not use Trip.com data. Transparent rules rearrange a sample five-day route; you can toggle a side trip and anime interest, pin must-sees, and enter flight and hotel quotes to see what remains. Prices and travel times are never presented as live data.",
+          "我把独立应用拆成景点发现、机酒与交通数据适配、区域路线规划、预算校验和语言模型讲解五层。用户先通过选项确认日期、预算、公共交通、周边城市和兴趣，再从大阪城、环球影城、阿倍野 Harukas 等主要景点中钉选必去地点。若五天排不下，系统明确列出冲突，不会悄悄删掉。",
+          "我把獨立應用拆成景點探索、機票酒店與交通數據接入、區域路線規劃、預算檢查及語言模型講解五層。用戶先透過選項確認日期、預算、公共交通、周邊城市及興趣，再從大阪城、環球影城、阿倍野 Harukas 等主要景點中釘選必去地點。若五天排不下，系統會列出衝突，不會悄悄刪掉。",
+          "The standalone app separates attraction discovery, supplier data, route planning, budget checks and model-generated explanations. Travellers choose dates, budget, transit, side trips and interests, then pin places such as Osaka Castle, Universal Studios Japan and Abeno Harukas. If five days cannot fit them all, the app exposes the conflict instead of silently dropping a must-see.",
+        ],
+      },
+      {
+        title: ["Agent 负责解释，事实由数据源负责", "Agent 負責解釋，事實由數據源負責", "Let the agent explain; let sources own the facts"],
+        body: [
+          "服务端预留授权接口，可并行查询机票、酒店、景点门票和公共交通，再依据位置、停留时间与用户硬约束生成五日路线。语言模型只负责解释取舍和提出调整建议，不能改写供应商报价。每笔费用保留币种、来源与时间；缺报价、汇率或车次时，预算状态是「未知」，而不是把缺项当作零元。",
+          "服務端預留授權接口，可並行查詢機票、酒店、景點門票及公共交通，再根據位置、停留時間與用戶硬性條件生成五日路線。語言模型只解釋取捨和提出調整建議，不能改寫供應商報價。每筆費用保留幣種、來源及時間；缺少報價、匯率或班次時，預算狀態是「未知」，而不是把缺項當作零元。",
+          "The server has adapters for licensed flight, hotel, ticket and transit gateways, which can run in parallel once configured. It then builds a route from geography, visit time and hard user constraints. The model explains trade-offs but cannot rewrite supplier quotes. Every price retains its currency, source and timestamp; missing quotes or exchange rates make affordability unknown, never zero.",
         ],
       },
       {
@@ -141,9 +149,9 @@ export const entries: Entry[] = [
       },
     ],
     note: [
-      "独立概念验证，与 Trip.com 无合作关系。观察来自一次个人试用；原型中的路线是示意，价格须由用户自行核对。",
-      "獨立概念驗證，與 Trip.com 沒有合作關係。觀察來自一次個人試用；原型路線僅供示意，價格須由用戶自行核對。",
-      "Independent concept, not affiliated with Trip.com. Observations come from one personal session; routes are illustrative and prices need independent verification.",
+      "独立概念验证，与 Trip.com 无合作关系。观察来自一次个人试用。公开应用的样例数据并非实时；真正的机酒与交通查询需取得授权接口并配置服务端。",
+      "獨立概念驗證，與 Trip.com 沒有合作關係。觀察來自一次個人試用。公開應用的樣例數據並非即時；真正的機票酒店與交通查詢需要授權接口及服務端設定。",
+      "Independent concept, not affiliated with Trip.com. Observations come from one personal session. Public sample data is not live; real supplier queries require licensed APIs and a configured backend.",
     ],
   },
   {

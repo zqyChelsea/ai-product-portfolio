@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="zh-HK">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f5f8ff" />
+  <title>Kansai Journey Lab · AI 旅程策劃原型</title>
+  <meta name="description" content="先選必去景點、偏好、交通與預算，再由旅遊規劃 Agent 整合可驗證的機酒及交通資料。獨立產品原型，非 Trip.com 官方產品。" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Kansai Journey Lab 首頁"><span class="brand-mark">✦</span><span>Journey<span class="brand-dot">.</span>Lab</span></a>
+    <nav class="topnav" aria-label="頁面導航"><a href="#preferences">01 旅程偏好</a><a href="#attractions">02 必去景點</a><a href="#result">03 行程結果</a></nav>
+    <div class="topbar-end"><span class="currency">🇭🇰 HKD</span><span class="prototype-badge">INDEPENDENT CONCEPT</span></div>
+  </header>
+  <main id="top">
+    <section class="intro">
+      <div class="intro-copy"><span class="eyebrow">Kansai, made possible / 01</span><h1>喜歡的地方，<br /><em>真的走得到。</em></h1><p>大阪五天，不必在「人氣景點」與「負擔得起」之間盲猜。先選擇不能錯過的地方，再讓規劃 Agent 檢查預算、交通與順路程度。</p><div class="intro-pills"><span>香港出發</span><span>五日四夜</span><span>公共交通優先</span><span>關西周邊可選</span></div></div>
+      <div class="intro-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="art-card art-osaka"><span>01 / OSAKA</span><strong>大阪</strong><small>城與街道</small></div><div class="art-card art-kobe"><span>02 / KANSAI</span><strong>神戶</strong><small>可選一日</small></div><div class="art-line"></div><div class="art-star">✳</div></div>
+    </section>
+    <div class="notice"><strong>作品集中的獨立概念，非 Trip.com 官方產品。</strong><span>樣例模式的價格與班次不是實時資料；正式結果只接受授權數據源，缺項會清楚標示。</span><a href="https://github.com/zqyChelsea/ai-product-portfolio/tree/main/travel-agent" target="_blank" rel="noreferrer">查看項目代碼 ↗</a></div>
+    <section class="workspace" aria-label="旅程規劃工作台">
+      <aside class="preferences panel" id="preferences">
+        <div class="panel-header"><span class="panel-icon">✦</span><div><small>PLANNING ASSISTANT</small><h2>先告訴我重要的事</h2></div><span class="panel-number">01</span></div>
+        <div class="panel-body">
+          <p class="helper">以下問題可直接點選。沒有合適的選項，再寫下你的答案。</p>
+          <div class="question"><div class="question-title"><span>01</span><h3>甚麼時候出發？</h3></div><div class="date-grid"><label>出發日期<input id="departure-date" type="date" required /></label><label>回程日期<input id="return-date" type="date" required /></label></div><p class="field-hint">目前以大阪五日四夜作例子；航班目標是關西機場 KIX。</p></div>
+          <div class="question"><div class="question-title"><span>02</span><h3>整趟旅程最多花多少？</h3></div><div class="choice-row" data-group="budget"><button type="button" data-value="5000">HK$5,000</button><button type="button" data-value="6500" class="active">HK$6,500</button><button type="button" data-value="8000">HK$8,000</button><button type="button" data-value="other">其他金額 ＋</button></div><label class="custom-field hidden" id="custom-budget-wrap">自訂總預算<input id="custom-budget" type="number" min="1000" max="100000" placeholder="HK$" /></label></div>
+          <div class="question"><div class="question-title"><span>03</span><h3>你想怎樣移動？</h3></div><div class="choice-row" data-group="transport"><button type="button" data-value="public" class="active">🚆 鐵路＋步行</button><button type="button" data-value="mixed">🚇 公共交通＋短程的士</button></div></div>
+          <div class="question"><div class="question-title"><span>04</span><h3>要安排大阪周邊嗎？</h3></div><div class="choice-row" data-group="sideTrip"><button type="button" data-value="osaka">只玩大阪</button><button type="button" data-value="kobe" class="active">神戶一日</button><button type="button" data-value="nara">奈良一日</button><button type="button" data-value="other">其他 ＋</button></div><label class="custom-field hidden" id="custom-side-wrap">其他想去的城市<input id="custom-side" type="text" maxlength="80" placeholder="例如：京都" /></label></div>
+          <div class="question"><div class="question-title"><span>05</span><h3>這次想偏重甚麼？</h3></div><p class="field-hint">可多選，Agent 會用偏好補足未釘選的空檔。</p><div class="choice-row multi" data-group="interests"><button type="button" data-value="culture" class="active">🏛️ 人文</button><button type="button" data-value="history" class="active">📜 歷史</button><button type="button" data-value="nature" class="active">🌿 風景自然</button><button type="button" data-value="food">🍡 美食</button><button type="button" data-value="anime" class="active">🎮 動漫</button><button type="button" data-value="views">🌇 城市景觀</button><button type="button" data-value="shopping">🛍️ 購物</button><button type="button" id="other-interest-toggle" data-value="other">其他偏好 ＋</button></div><label class="custom-field hidden" id="custom-interest-wrap">其他興趣<input id="custom-interest" type="text" maxlength="80" placeholder="例如：古書店" /></label></div>
+          <div class="question"><div class="question-title"><span>06</span><h3>每日節奏</h3></div><div class="choice-row" data-group="pace"><button type="button" data-value="relaxed">輕鬆</button><button type="button" data-value="moderate" class="active">適中</button><button type="button" data-value="packed">充實</button></div></div>
+          <details class="connection"><summary>連接你的規劃服務 <span id="connection-dot" class="status-dot"></span></summary><label>後端服務 URL<input id="api-base" type="url" placeholder="https://你的服務域名" /></label><p>此處只填服務地址。API Key 必須存放於服務端，不會出現在瀏覽器或 GitHub Pages。</p><button type="button" id="check-connection">測試連接</button></details>
+        </div>
+      </aside>
+      <section class="attractions panel" id="attractions">
+        <div class="panel-header"><span class="panel-icon">◇</span><div><small>DISCOVER BEFORE PLANNING</small><h2>先選一定要去的地方</h2></div><span class="panel-number">02</span></div>
+        <div class="attraction-intro"><div><strong>大阪與近郊的主要景點</strong><p>點選後會固定在行程中。若五天放不下，Agent 會告訴你衝突，而不是悄悄刪掉。</p></div><span id="selected-count">已選 3 個</span></div>
+        <div class="filter-row" data-group="filter"><button type="button" data-value="all" class="active">全部</button><button type="button" data-value="culture">人文歷史</button><button type="button" data-value="nature">自然</button><button type="button" data-value="anime">動漫娛樂</button><button type="button" data-value="food">美食街區</button></div>
+        <div id="attraction-grid" class="attraction-grid" aria-live="polite"></div>
+        <div class="custom-stop"><label for="custom-attraction">沒有看到想去的地方？</label><div><input id="custom-attraction" type="text" maxlength="80" placeholder="輸入景點名稱（需再確認位置）" /><button type="button" id="add-attraction">加入 ＋</button></div><div id="custom-tags" class="custom-tags"></div></div>
+        <div class="planner-action"><div><strong>選好了？</strong><p>先核對硬條件，再查詢機酒與交通，最後讓 Agent 組合路線。</p></div><button type="button" id="plan-button">✦ 規劃並檢查 <span>→</span></button></div>
+      </section>
+      <section class="results panel" id="result">
+        <div class="panel-header"><span class="panel-icon">▤</span><div><small>YOUR KANSAI PLAN</small><h2>行程與預算</h2></div><span class="panel-number">03</span></div>
+        <div id="result-content" class="result-content"><div class="empty-result"><div class="empty-orbit"><span>✦</span></div><h3>下一站，從你的選擇開始。</h3><p>左邊填好偏好，中間釘選景點。連接規劃服務後，這裡會展示每日路線、來源可追溯的報價，以及可能超出預算的地方。</p><button type="button" id="sample-button">查看清楚標註的樣例方案 ↗</button></div></div>
+      </section>
+    </section>
+    <footer><span>Journey.Lab / Product concept by Qinye Zhang</span><span>Keep the wonder. Make the route work.</span><a href="https://zqychelsea.github.io/ai-product-portfolio/zh-cn/files/kansai-student-planner/">返回作品集案例 ↗</a></footer>
+  </main>
+</body>
+</html>

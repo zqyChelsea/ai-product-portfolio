@@ -25,6 +25,9 @@ const pages = [
     ...files.map((file) => join(root, locale, "files", file, "index.html")),
   ]),
 ];
+for (const name of ["index.html", "styles.css", "app.js", "sample-plan.json"]) {
+  assert(existsSync(join(root, "travel-agent", name)), `Missing standalone agent asset: ${name}`);
+}
 let links = 0;
 for (const page of pages) {
   assert(existsSync(page), `Missing static route: ${page}`);

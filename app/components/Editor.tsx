@@ -5,7 +5,6 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import KansaiPlannerDemo from "./KansaiPlannerDemo";
 import {
   asset,
   copy,
@@ -1095,7 +1094,14 @@ export default function Editor({
                   </span>
                 </div>
                 {entry.id === "kansai-student-planner" && (
-                  <KansaiPlannerDemo locale={locale} />
+                  <div className="agent-project-bridge">
+                    <div>
+                      <span>INDEPENDENT APP / AGENT WORKSPACE</span>
+                      <h2>{tr(label("把规划交给有证据的 Agent", "把規劃交給有證據的 Agent", "Plan with an evidence-aware agent"))}</h2>
+                      <p>{tr(label("先选偏好与必去景点，再检查机酒、交通和预算。公开页面提供清楚标注的样例；实时规划需要连接独立后端与授权数据源。", "先選偏好與必去景點，再檢查機票、酒店、交通及預算。公開頁面提供清楚標示的樣例；即時規劃需要連接獨立後端及授權數據源。", "Choose preferences and must-sees first; then inspect flights, hotels, transit and budget. The public UI includes a labelled sample. Live planning requires the separate backend and licensed data sources."))}</p>
+                    </div>
+                    <a href={asset("/travel-agent/")} target="_blank" rel="noreferrer">{tr(label("打开独立应用", "開啟獨立應用", "Open the standalone app"))} ↗</a>
+                  </div>
                 )}
                 {entry.id === "academic-advisor" && (
                   <AcademicAdvisorMedia locale={locale} slot="opening" />
