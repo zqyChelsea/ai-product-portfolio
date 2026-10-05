@@ -9,6 +9,7 @@ const files = [
   "about",
   "resume",
   "contact",
+  "kansai-student-planner",
   "recruiting-agent",
   "gptutor",
   "academic-advisor",

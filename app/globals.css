@@ -798,6 +798,184 @@ button:disabled {
   font-size: 43px;
   color: #9bb774;
 }
+.kansai-demo {
+  margin: 0 0 46px;
+  border: 1px solid #d9e2f0;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #f6f9ff;
+  box-shadow: 0 18px 54px #2d4d8520;
+}
+.kansai-demo-head {
+  min-height: 126px;
+  padding: 25px 30px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 20px;
+  background: linear-gradient(115deg, #e9f0ff 0%, #f7f9ff 70%, #e8f8fa 100%);
+}
+.kansai-kicker,
+.kansai-step,
+.kansai-map-label,
+.kansai-card-index {
+  font: 10px var(--mono);
+  letter-spacing: 0.08em;
+  color: #4268c5;
+}
+.kansai-demo-head h2 {
+  font-size: clamp(20px, 2.2vw, 30px);
+  letter-spacing: -0.04em;
+  margin: 8px 0;
+}
+.kansai-demo-head p {
+  color: #5d6b82;
+  font-size: 12px;
+  line-height: 1.6;
+}
+.kansai-live {
+  flex-shrink: 0;
+  border: 1px solid #a7bbef;
+  color: #2d57c4;
+  border-radius: 50px;
+  padding: 7px 10px;
+  font: 10px var(--mono);
+}
+.kansai-workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1.02fr) minmax(0, 1fr) minmax(0, 1.02fr);
+  min-height: 670px;
+  border-top: 1px solid #d9e2f0;
+}
+.kansai-workspace > div {
+  min-width: 0;
+  border-right: 1px solid #dfe6f1;
+}
+.kansai-workspace > div:last-child { border-right: 0; }
+.kansai-assistant { background: #f4f7fe; display: flex; flex-direction: column; }
+.kansai-plan { background: #fff; }
+.kansai-inspector { background: #fbfcff; }
+.kansai-pane-title {
+  min-height: 54px;
+  padding: 15px 18px;
+  border-bottom: 1px solid #dfe6f1;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #1b2945;
+}
+.kansai-pane-title > span:last-child:not(.kansai-spark) {
+  margin-left: auto;
+  font: 10px var(--mono);
+  color: #7b8bab;
+}
+.kansai-spark { color: #2f63e9; font-size: 23px; line-height: 1; }
+.kansai-message {
+  margin: 18px 14px;
+  padding: 18px;
+  background: white;
+  border: 1px solid #dfe6f1;
+  border-radius: 15px;
+  box-shadow: 0 7px 20px #5570aa0a;
+}
+.kansai-message h3 {
+  font-size: 17px;
+  line-height: 1.5;
+  letter-spacing: -0.02em;
+  margin: 12px 0 16px;
+}
+.kansai-choices { display: flex; gap: 8px; flex-wrap: wrap; }
+.kansai-choices button {
+  border: 1px solid #d5ddec;
+  border-radius: 10px;
+  background: white;
+  padding: 9px 11px;
+  color: #35415c;
+  font-size: 12px;
+  line-height: 1.3;
+  text-align: left;
+  transition: border-color .15s, background .15s, transform .15s;
+}
+.kansai-choices button:hover { border-color: #4776ed; transform: translateY(-1px); }
+.kansai-choices button.selected { border-color: #386cfa; color: #214ec6; background: #edf3ff; }
+.kansai-primary {
+  margin-top: 16px;
+  padding: 11px 15px;
+  border-radius: 10px;
+  background: linear-gradient(110deg, #2c6bfa, #665af2);
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+}
+.kansai-custom { margin-top: 14px; border-top: 1px solid #e6ebf3; padding-top: 14px; }
+.kansai-custom label { display: block; margin-bottom: 7px; color: #64728d; font-size: 11px; }
+.kansai-custom > div { display: flex; gap: 7px; }
+.kansai-custom input,
+.kansai-quote-grid input {
+  min-width: 0;
+  width: 100%;
+  border: 1px solid #cbd6e7;
+  border-radius: 8px;
+  padding: 9px 10px;
+  background: white;
+  color: #24324a;
+  font-size: 12px;
+}
+.kansai-custom button { background: #376bf0; color: white; border-radius: 8px; padding: 0 13px; }
+.kansai-summary { display: grid; gap: 8px; }
+.kansai-summary > span { display: flex; justify-content: space-between; gap: 12px; border-bottom: 1px solid #edf0f5; padding: 8px 0; color: #6b7890; font-size: 11px; }
+.kansai-summary strong { font-size: 11px; text-align: right; color: #253b69; }
+.kansai-summary button { color: #285fe8; padding: 10px 0 0; text-align: left; font-size: 11px; font-weight: 700; }
+.kansai-assistant-foot { margin-top: auto; padding: 20px; color: #8b98b0; font-size: 10px; line-height: 1.5; }
+.kansai-day-tabs { display: flex; gap: 5px; padding: 12px 14px; overflow-x: auto; }
+.kansai-day-tabs button { flex-shrink: 0; padding: 7px 9px; border: 1px solid #d8e0eb; border-radius: 30px; color: #61708b; font-size: 10px; white-space: nowrap; }
+.kansai-day-tabs button.active { color: white; background: #23324f; border-color: #23324f; }
+.kansai-day-list { padding: 0 14px 20px; display: grid; gap: 9px; }
+.kansai-day-card {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 23px minmax(0, 1fr);
+  gap: 7px;
+  text-align: left;
+  padding: 12px 10px;
+  border: 1px solid #e2e7f0;
+  border-left: 3px solid #bbcce6;
+  border-radius: 9px;
+  background: white;
+}
+.kansai-day-card.active { border-color: #a7c0fa; border-left-color: #3873ee; background: #f5f8ff; }
+.kansai-day-card small { display: block; color: #6680a7; font-size: 10px; margin-bottom: 4px; }
+.kansai-day-card strong { display: block; color: #24304b; font-size: 12px; line-height: 1.45; }
+.kansai-stop-line { display: block; color: #7a8597; font-size: 10px; line-height: 1.6; margin-top: 6px; }
+.kansai-zone-board { min-height: 265px; position: relative; overflow: hidden; background: radial-gradient(circle at 20% 70%, #e9f2ff 0 16%, transparent 17%), radial-gradient(circle at 80% 22%, #e8f8f0 0 15%, transparent 16%), linear-gradient(135deg, #f6fafb, #e9f0f9); border-bottom: 1px solid #dfe6f1; }
+.kansai-zone-board::before { content: ""; position: absolute; inset: 36px 22px 18px; border: 2px dashed #a8bdda; border-radius: 55% 45% 40% 60%; transform: rotate(-19deg); }
+.kansai-map-label { position: absolute; top: 12px; left: 13px; font-size: 9px; color: #8192ae; }
+.kansai-zone { position: absolute; z-index: 1; padding: 7px 9px; border: 1px solid #cbdaf2; border-radius: 18px; background: #fff; box-shadow: 0 5px 14px #476cb526; color: #31568c; font-size: 10px; white-space: nowrap; }
+.zone-north { top: 25%; left: 45%; }.zone-east { top: 48%; left: 55%; }.zone-south { top: 72%; left: 40%; }.zone-bay { top: 52%; left: 7%; }.zone-trip { top: 18%; right: 5%; border-color: #a7d9c0; color: #28754e; }
+.kansai-day-detail { padding: 17px 17px 12px; border-bottom: 1px solid #dfe6f1; }
+.kansai-day-detail > span { display: block; color: #4369bc; font: 10px var(--mono); margin-bottom: 8px; }
+.kansai-day-detail strong { display: block; font-size: 15px; }
+.kansai-day-detail p { color: #66758c; font-size: 11px; line-height: 1.65; margin-top: 8px; }
+.kansai-budget { padding: 16px 17px 20px; }
+.kansai-quote-grid { display: grid; gap: 9px; margin: 13px 0; }
+.kansai-quote-grid label { color: #66758c; font-size: 10px; }
+.kansai-quote-grid input { margin-top: 5px; }
+.kansai-budget p { font-size: 11px; line-height: 1.6; color: #316553; margin-bottom: 7px; }
+.kansai-budget p.kansai-over-budget { color: #b34748; }
+.kansai-budget small { color: #8a95a6; font-size: 9px; line-height: 1.5; display: block; }
+@media (max-width: 1350px) {
+  .kansai-workspace { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .kansai-assistant { grid-column: 1 / -1; border-right: 0 !important; border-bottom: 1px solid #dfe6f1; }
+  .kansai-assistant-foot { display: none; }
+}
+@media (max-width: 720px) {
+  .kansai-demo-head { padding: 20px; flex-direction: column; }
+  .kansai-workspace { display: block; }
+  .kansai-workspace > div { border-right: 0; border-bottom: 1px solid #dfe6f1; }
+  .kansai-zone-board { min-height: 245px; }
+}
 .pipeline {
   display: grid;
   grid-template-columns: repeat(5, 1fr);

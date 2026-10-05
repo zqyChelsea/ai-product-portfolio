@@ -5,6 +5,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import KansaiPlannerDemo from "./KansaiPlannerDemo";
 import {
   asset,
   copy,
@@ -1093,6 +1094,9 @@ export default function Editor({
                     ↗
                   </span>
                 </div>
+                {entry.id === "kansai-student-planner" && (
+                  <KansaiPlannerDemo locale={locale} />
+                )}
                 {entry.id === "academic-advisor" && (
                   <AcademicAdvisorMedia locale={locale} slot="opening" />
                 )}
