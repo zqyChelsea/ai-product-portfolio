@@ -9,7 +9,8 @@ const fallbackAttractions = [
   ["nipponbashi", "日本橋電電城", "難波 · 動漫", ["anime", "shopping"]],
   ["minoh", "箕面公園", "北部 · 自然", ["nature", "views"]],
   ["sumiyoshi", "住吉大社", "南部 · 歷史", ["history", "culture"]],
-].map(([id, name, detail, interests]) => ({ id, name, detail, interests }));
+].map(([id, name, detail, interests]) => ({ id, name, detail, interests,
+  fullDay: id === "usj", ticket: ["osaka-castle", "usj", "abeno-harukas", "kaiyukan", "umeda-sky"].includes(id) ? "paid" : "free" }));
 
 const state = {
   attractions: fallbackAttractions,
