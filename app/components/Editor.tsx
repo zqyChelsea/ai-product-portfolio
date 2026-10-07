@@ -1097,10 +1097,10 @@ export default function Editor({
                   <div className="agent-project-bridge">
                     <div>
                       <span>INDEPENDENT APP / AGENT WORKSPACE</span>
-                      <h2>{tr(label("把规划交给有证据的 Agent", "把規劃交給有證據的 Agent", "Plan with an evidence-aware agent"))}</h2>
-                      <p>{tr(label("先选偏好与必去景点，再检查机酒、交通和预算。公开页面提供清楚标注的样例；实时规划需要连接独立后端与授权数据源。", "先選偏好與必去景點，再檢查機票、酒店、交通及預算。公開頁面提供清楚標示的樣例；即時規劃需要連接獨立後端及授權數據源。", "Choose preferences and must-sees first; then inspect flights, hotels, transit and budget. The public UI includes a labelled sample. Live planning requires the separate backend and licensed data sources."))}</p>
+                      <h2>{tr(label("亲自试试：让预算决定路线", "親自試試：讓預算決定路線", "Try the planner: let budget shape the route"))}</h2>
+                      <p>{tr(label("独立应用现已上线：选城市、日期、必去景点与航班，查看行程怎样随到达时间和模拟机酒价格变化。模拟价格不等于实时可订报价。", "獨立應用現已上線：選城市、日期、必去景點及航班，看看行程如何隨抵達時間與模擬機票酒店價格改變。模擬價格並非即時可訂報價。", "The standalone app is live. Pick a city, dates, must-sees and flights to see how arrival time and simulated travel prices reshape the plan. Simulated prices are not live bookable quotes."))}</p>
                     </div>
-                    <a href={asset("/travel-agent/")} target="_blank" rel="noreferrer">{tr(label("打开独立应用", "開啟獨立應用", "Open the standalone app"))} ↗</a>
+                    <a href="https://kansai-journey-agent.zqychelsea.chatgpt.site/planner" target="_blank" rel="noopener noreferrer">{tr(label("试用已上线的规划器", "試用已上線的規劃器", "Try the live planner"))} ↗</a>
                   </div>
                 )}
                 {entry.id === "academic-advisor" && (

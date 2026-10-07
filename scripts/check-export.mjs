@@ -60,6 +60,7 @@ const publicHosts = new Set([
   "www.linkedin.com",
   "doi.org",
   "zqychelsea.github.io",
+  "kansai-journey-agent.zqychelsea.chatgpt.site",
 ]);
 for (const page of pages) {
   for (const match of readFileSync(page, "utf8").matchAll(
@@ -82,6 +83,14 @@ assert(
   "Default entry must be simplified Chinese",
 );
 for (const locale of locales) {
+  const kansai = readFileSync(
+    join(root, locale, "files/kansai-student-planner/index.html"),
+    "utf8",
+  );
+  assert(
+    kansai.includes('href="https://kansai-journey-agent.zqychelsea.chatgpt.site/planner"'),
+    `Missing deployed planner link: ${locale}`,
+  );
   const home = readFileSync(join(root, locale, "index.html"), "utf8");
   assert(
     !home.includes('class="intro-name">River'),

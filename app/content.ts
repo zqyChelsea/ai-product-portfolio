@@ -44,9 +44,9 @@ export const entries: Entry[] = [
     category: "projects",
     date: "2026.10 · 独立产品研究 / Independent concept",
     title: [
-      "关西穷游规划：让预算成为行程的起点",
-      "關西省錢旅行規劃：讓預算成為行程起點",
-      "Kansai on a student budget",
+      "日本穷游规划：先算得起，再走得通",
+      "日本省錢旅行規劃：先負擔得起，再走得通",
+      "Japan travel that fits a student budget",
     ],
     role: [
       "独立产品研究 · Agent 应用 · 全栈实现",
@@ -54,104 +54,136 @@ export const entries: Entry[] = [
       "Independent product research · Agent app · Full-stack",
     ],
     intro: [
-      "以香港出发、独游大阪五天的学生视角，重新思考 AI 行程规划：先确认预算、公共交通与周边城市，再把灵感变成可执行的路线。",
-      "從香港出發、獨遊大阪五天的學生視角，重新思考 AI 行程規劃：先確認預算、公共交通及周邊城市，再把靈感變成可執行的路線。",
-      "A five-day solo trip from Hong Kong to Osaka reframed as a planning problem: establish budget, transit and side trips before generating an itinerary.",
+      "从香港出发的学生党视角，把预算、公共交通、必去景点和到达时间放进同一套规划逻辑。原型已覆盖五座日本城市，并开放独立网页试用。",
+      "從香港出發的學生視角，把預算、公共交通、必去景點及抵達時間放進同一套規劃邏輯。原型已涵蓋五座日本城市，並開放獨立網頁試用。",
+      "From a Hong Kong student's perspective, this planner treats budget, transit, must-sees and flight arrival times as one problem. The standalone prototype now covers five Japanese cities.",
     ],
     tags: ["Travel AI", "Product discovery", "Agent workflow"],
-    metric: "5 DAYS",
+    metric: "5 CITIES",
     metricLabel: [
-      "独立 Agent 应用与五日行程案例；非 Trip.com 官方产品",
-      "獨立 Agent 應用與五日行程案例；並非 Trip.com 官方產品",
-      "A standalone agent app and five-day case; not a Trip.com product",
+      "东京、横滨、大阪、名古屋、福冈；天数由旅客自选",
+      "東京、橫濱、大阪、名古屋、福岡；日數由旅客自選",
+      "Tokyo, Yokohama, Osaka, Nagoya and Fukuoka; trip length is flexible",
     ],
     sections: [
       {
-        title: ["一次真实的规划卡点", "一次真實的規劃卡點", "The planning friction I encountered"],
+        title: ["从一次大阪穷游规划说起", "從一次大阪省錢旅行規劃說起", "Where the Osaka planning session broke down"],
         body: [
-          "我按「独行、自然与历史文化、适中节奏、舒适酒店、早起、喜欢动漫」生成大阪五日行程，同时查看了 Trip.Best 的景点与酒店榜单，以及独立包团流程。以下是这次体验中的观察，不代表平台所有用户或版本的表现。",
-          "我按「獨行、自然與歷史文化、適中節奏、舒適酒店、早起、喜歡動漫」生成大阪五日行程，同時查看 Trip.Best 的景點及酒店榜單，以及獨立包團流程。以下是這次體驗的觀察，不代表平台所有用戶或版本的表現。",
-          "I planned a five-day solo Osaka trip around nature, culture, history and anime, with a moderate pace, comfortable hotels and early starts. I also reviewed Trip.Best and the private-tour flow. These are observations from one planning session, not claims about every user or product version.",
+          "我以独自从香港出发、预算有限、喜欢历史文化与动漫的学生身份，试用 Trip.Planner 和 Trip.Best 规划大阪五日游。它们善于激发旅行兴趣；到了「花多少钱、怎么坐车、一天走不走得通」这一步，我仍要反复改动结果。以下是这次体验的观察，不代表平台所有版本或用户的情况。",
+          "我以獨自從香港出發、預算有限、喜歡歷史文化及動漫的學生身份，試用 Trip.Planner 和 Trip.Best 規劃大阪五日遊。它們能激發旅行興趣；到了「要花多少錢、怎樣乘車、一天能否走得通」這一步，我仍要反覆修改結果。以下是這次體驗的觀察，不代表平台所有版本或用戶的情況。",
+          "I tested Trip.Planner and Trip.Best as a budget-conscious solo student travelling from Hong Kong, interested in history, culture and anime. Both were useful for inspiration. Turning that inspiration into an affordable day-by-day route still took several rounds of correction. These are observations from my session, not claims about every version or traveller.",
         ],
         points: [
           [
-            "景点榜单给了热度和粗略区域，却没帮助我判断跨区交通；海游馆与梅田蓝天大厦相邻出现，很容易被误读为适合顺路游览。",
-            "景點榜單提供熱度和概略區域，卻未幫我理解跨區交通；海遊館與梅田藍天大廈相鄰出現，容易被誤解為適合順路遊覽。",
-            "The attraction ranking showed popularity and broad areas, but not the effort of crossing town. Kaiyukan and Umeda Sky Building appeared close in the list, which could be mistaken for a convenient pairing.",
+            "经典景点只在行程生成后才逐步浮现，我很难在规划前先指定大阪城或环球影城等必去地点。Trip.Best 的热度榜单也缺少交通语境：海游馆和梅田蓝天大厦相邻展示，并不意味着适合顺路游览。",
+            "經典景點要到行程生成後才逐步出現，我難以在規劃前指定大阪城或環球影城等必去地點。Trip.Best 的人氣榜單也欠缺交通語境：海遊館和梅田藍天大廈相鄰展示，不代表適合順路遊覽。",
+            "I wanted to pin places such as Osaka Castle or Universal Studios before generation, not keep editing them in later. Trip.Best's ranking also lacked transit context: Kaiyukan and Umeda Sky Building appearing side by side does not make them a convenient pair.",
           ],
           [
-            "这次生成结果默认驾车，出现香港飞名古屋的方案；香港飞大阪的展示偏向价格较高的航司。Trip.Best 的酒店榜单也难以直接筛出学生可承担的选择。",
-            "這次生成結果預設駕車，出現香港飛名古屋的方案；香港飛大阪的展示偏向較高價的航空公司。Trip.Best 的酒店榜單也難以直接篩出學生負擔得起的選擇。",
-            "My generated plan defaulted to driving and offered a Hong Kong–Nagoya flight. The Hong Kong–Osaka options surfaced to me skewed toward pricier carriers, while the hotel ranking was hard to use on a student budget.",
+            "我写明穷游需求后，生成结果仍默认驾车，并展示较贵酒店；一次结果甚至给大阪行程配了香港飞名古屋的航班。Trip.Best 的酒店榜单也不容易直接筛出学生住得起的选项。",
+            "即使我寫明省錢需求，生成結果仍預設駕車，並展示較昂貴的酒店；有一次甚至為大阪行程配上香港飛名古屋的航班。Trip.Best 的酒店榜單亦不易直接找出學生負擔得起的選項。",
+            "Even after I specified a tight budget, my plan defaulted to driving and showed expensive hotels; one result paired an Osaka itinerary with a Hong Kong–Nagoya flight. Trip.Best's hotel list did not make student-priced stays easy to find either.",
           ],
           [
-            "只输入「大阪」没有触发是否考虑神户等周边地区的追问。独立包团中，想去的景点只能写进备注，联络方式也需要再次填写。",
-            "只輸入「大阪」沒有觸發是否考慮神戶等周邊地區的追問。獨立包團中，想去的景點只能寫在備註，聯絡方式亦需要再次填寫。",
-            "Entering Osaka did not prompt me about nearby destinations such as Kobe. In the private-tour flow, must-see stops were relegated to notes, and contact details had to be re-entered.",
+            "只输入「大阪」时，系统没有在最初问我是否想加入京都、神户等周边城市。我需要在生成后追加需求，再微调几轮，才得到相对合适的路线。",
+            "只輸入「大阪」時，系統沒有在開始時詢問是否想加入京都、神戶等周邊城市。我需要在生成後補充需求，再修改幾輪，才得到比較合適的路線。",
+            "Entering Osaka did not ask up front whether I wanted nearby cities such as Kyoto or Kobe. I had to add the requirement after generation and revise the plan several times before it felt usable.",
           ],
         ],
       },
       {
-        title: ["不是多推荐几个景点，而是先问对问题", "不是多推薦幾個景點，而是先問對問題", "Ask the questions that change the plan"],
+        title: ["先让旅客决定什么不能妥协", "先讓旅客決定甚麼不能妥協", "Ask about non-negotiables first"],
         body: [
-          "我把产品机会定义为「预算可行性与路线可执行性」。在生成之前，先确认总预算、出行方式、是否接受周边一日游，以及必须去的景点。它们是约束，不应藏在自由输入的“特别需要”里。",
-          "我把產品機會定義為「預算可行性與路線可執行性」。生成之前，先確認總預算、交通方式、是否接受周邊一日遊，以及必去景點。這些是約束，不應藏在自由輸入的「特別需要」中。",
-          "The opportunity is not more recommendations; it is feasibility. Budget, transport mode, side-trip radius and must-see places are planning constraints and should be explicit inputs—not buried in a free-text note.",
+          "问题不在于推荐还不够多，而是关键约束问得太晚。我把「是否穷游、预算上限、公共交通、必去景点、周边一日游」放在生成前，以选择题为主；没有合适选项时才让用户输入。想体验当地历史街区、动漫地点或自然风景的人，也能先说清自己的偏好。",
+          "問題不在於推薦還不夠多，而是關鍵限制問得太遲。我把「是否省錢旅行、預算上限、公共交通、必去景點、周邊一日遊」放在生成前，以選擇題為主；沒有合適選項才讓用戶輸入。想體驗當地歷史街區、動漫地點或自然風景的旅客，也能先說清自己的偏好。",
+          "The issue was not a shortage of recommendations; the important constraints surfaced too late. Before generation, I ask about budget travel, a hard spending cap, public transit, must-see places and side trips, mostly through choices rather than free text. Interests such as historical neighbourhoods, anime or nature shape the plan too.",
         ],
         points: [
           [
-            "机票目的地要对齐行程：大阪优先比较关西机场；名古屋只有在「落地后转乘时间＋费用」仍有优势时才作为备选。低成本航司不能被榜单排序淹没。",
-            "航班目的地要對齊行程：大阪優先比較關西機場；名古屋只有在「落地後轉乘時間＋費用」仍有優勢時才作備選。廉航不應被榜單排序淹沒。",
-            "Airport choice must serve the itinerary: compare Kansai International Airport first; offer Nagoya only when the onward transfer still wins on total time and cost. Low-cost carriers should not be hidden by ranking.",
+            "选择大阪后，用户可直接决定只玩大阪，还是安排神户、奈良一日游。京都是这次研究中发现的需求，但还未进入当前原型的可选目录。周边游要占据完整的一天，不能被当成顺路多加一个景点。",
+            "選擇大阪後，用戶可直接決定只玩大阪，還是安排神戶、奈良一日遊。京都是這次研究中發現的需求，但尚未加入目前原型的可選目錄。周邊遊要佔用完整一天，不能當成順路多加一個景點。",
+            "For Osaka, travellers can choose to stay in the city or devote a day to Kobe or Nara. Kyoto surfaced as a need in this research but is not yet in the prototype's selectable catalogue. A side trip gets a real day, rather than being squeezed in as one more stop.",
           ],
           [
-            "景点按区域与公共交通可达性分组；每天保留适中强度和转乘余量。热门榜单负责启发，行程生成负责取舍。",
-            "景點按區域及公共交通可達性分組；每天保留適中強度與轉乘餘量。熱門榜單負責啟發，行程生成負責取捨。",
-            "Cluster attractions by area and transit access, leaving transfer buffers and a moderate daily load. Rankings inspire; the planner must make trade-offs.",
+            "规划前先列出城市主要景点，用户钉选后再按区域、停留时间与交通可达性编排。若天数放不下，系统解释冲突，不会悄悄删掉必去地点；生成后也能增减景点并重新计算。",
+            "規劃前先列出城市主要景點，用戶釘選後再按區域、停留時間及交通可達性編排。若日數容不下，系統會解釋衝突，不會悄悄刪掉必去地點；生成後亦可增減景點並重新計算。",
+            "Major attractions appear before planning. Pinned stops are then arranged by geography, visit duration and transit access. If the trip cannot fit them, the app explains the conflict instead of silently dropping them; travellers can also edit and recalculate afterward.",
           ],
         ],
       },
       {
-        title: ["把概念做成可运行的应用", "把概念做成可運行的應用", "Build an application, not a static mock-up"],
+        title: ["让预算和到达时间真正改变路线", "讓預算與抵達時間真正改變路線", "Make price and arrival time change the route"],
         body: [
-          "我把独立应用拆成景点发现、机酒与交通数据适配、区域路线规划、预算校验和语言模型讲解五层。用户先通过选项确认日期、预算、公共交通、周边城市和兴趣，再从大阪城、环球影城、阿倍野 Harukas 等主要景点中钉选必去地点。若五天排不下，系统明确列出冲突，不会悄悄删掉。",
-          "我把獨立應用拆成景點探索、機票酒店與交通數據接入、區域路線規劃、預算檢查及語言模型講解五層。用戶先透過選項確認日期、預算、公共交通、周邊城市及興趣，再從大阪城、環球影城、阿倍野 Harukas 等主要景點中釘選必去地點。若五天排不下，系統會列出衝突，不會悄悄刪掉。",
-          "The standalone app separates attraction discovery, supplier data, route planning, budget checks and model-generated explanations. Travellers choose dates, budget, transit, side trips and interests, then pin places such as Osaka Castle, Universal Studios Japan and Abeno Harukas. If five days cannot fit them all, the app exposes the conflict instead of silently dropping a must-see.",
-        ],
-      },
-      {
-        title: ["Agent 负责解释，事实由数据源负责", "Agent 負責解釋，事實由數據源負責", "Let the agent explain; let sources own the facts"],
-        body: [
-          "服务端预留授权接口，可并行查询机票、酒店、景点门票和公共交通，再依据位置、停留时间与用户硬约束生成五日路线。语言模型只负责解释取舍和提出调整建议，不能改写供应商报价。每笔费用保留币种、来源与时间；缺报价、汇率或车次时，预算状态是「未知」，而不是把缺项当作零元。",
-          "服務端預留授權接口，可並行查詢機票、酒店、景點門票及公共交通，再根據位置、停留時間與用戶硬性條件生成五日路線。語言模型只解釋取捨和提出調整建議，不能改寫供應商報價。每筆費用保留幣種、來源及時間；缺少報價、匯率或班次時，預算狀態是「未知」，而不是把缺項當作零元。",
-          "The server has adapters for licensed flight, hotel, ticket and transit gateways, which can run in parallel once configured. It then builds a route from geography, visit time and hard user constraints. The model explains trade-offs but cannot rewrite supplier quotes. Every price retains its currency, source and timestamp; missing quotes or exchange rates make affordability unknown, never zero.",
-        ],
-      },
-      {
-        title: ["如何验证，而不提前宣称效果", "如何驗證，而不提前宣稱成效", "What I would measure next"],
-        body: [
-          "先让预算有限的香港出发旅客完成同一规划任务，再比较现有流程与原型。重点不是行程生成速度，而是用户是否能选出预算内、愿意实际出发的路线。这个案例尚未进行正式用户实验。",
-          "先讓預算有限、由香港出發的旅客完成同一規劃任務，再比較現有流程與原型。重點不是行程生成速度，而是用戶能否選出預算內、願意實際出發的路線。這個案例尚未進行正式用戶測試。",
-          "I would test both flows with budget-conscious travellers from Hong Kong. The key outcome is not generation speed, but whether they can choose an affordable route they would actually take. This case has not yet been through a formal user study.",
+          "原型支持东京、横滨、大阪、名古屋和福冈，旅程天数可自选。我把它拆成景点发现、报价适配、区域路线、预算校验和 Agent 解释五层。以香港快运的参考班表固定航班号与时间，在 HK$1,800–2,300 的示意区间内按分钟模拟往返价格；税后青旅／胶囊为 HK$190–300／晚，酒店类型为 HK$270–500／晚。这些不是实时可订报价，也不是经统计验证的历史均价。",
+          "原型支援東京、橫濱、大阪、名古屋及福岡，旅程日數可自選。我把它拆成景點探索、報價接入、區域路線、預算檢查及 Agent 解釋五層。香港快運參考班表的航班號與時間保持固定，往返價格按分鐘在 HK$1,800–2,300 的示意區間內模擬；稅後青旅／膠囊為每晚 HK$190–300，酒店類型為每晚 HK$270–500。這些並非即時可訂報價，也不是經統計核實的歷史均價。",
+          "The prototype covers Tokyo, Yokohama, Osaka, Nagoya and Fukuoka, with flexible trip length. I separated attraction discovery, quote adapters, geographic routing, budget checks and agent explanations. Flight numbers and times stay fixed in a user-provided HK Express reference timetable; round-trip prices vary by minute within a simulated HK$1,800–2,300 band. Tax-inclusive hostel/capsule nights vary from HK$190–300, and budget-hotel types from HK$270–500. These are neither live bookable quotes nor statistically validated historical averages.",
         ],
         points: [
           [
-            "任务指标：无需手动改交通方式或机场的比例、发现跨区绕路所需时间、预算超限后能否顺利调整、景点与机酒预订的有效点击。",
-            "任務指標：毋須手動修改交通方式或機場的比例、發現跨區繞路所需時間、超出預算後能否順利調整、景點及機酒預訂的有效點擊。",
-            "Task metrics: plans needing no manual transport/airport correction, time to notice cross-city detours, recovery after going over budget, and qualified booking handoffs.",
+            "旅客改选早到或晚到的班次，首日可用时间随之改变；早班回港会清空返程日景点。凌晨抵达也不会多算尚未入住的一晚。",
+            "旅客改選早到或晚到的航班，首日可用時間會跟着改變；清晨回港會清空返程日景點。凌晨抵達亦不會多算尚未入住的一晚。",
+            "Choosing an early or late arrival changes the first day's capacity; an early return clears sightseeing from the last day. Landing after midnight also avoids charging an extra pre-arrival hotel night.",
           ],
           [
-            "产品落地时，机酒价格、库存与营业时间需由实时服务校验；路线须接入地图与公共交通数据。独立包团可复用已获授权的账户邮箱，并把“必去景点”变为结构化字段。",
-            "產品落地時，機票、酒店價格及營業時間須由即時服務核實；路線須接入地圖及公共交通數據。獨立包團可在授權後沿用帳戶電郵，並把「必去景點」變成結構化欄位。",
-            "A production version would verify inventory, prices and opening hours against live services, and routes against transit data. With consent, the private-tour form could prefill the account email and treat must-sees as structured fields.",
+            "每晚住宿有硬上限。酒店模拟价高于上限，就只保留符合条件的青旅或胶囊；预算缺交通、门票等关键费用时，显示「待核价」，不把未知成本当零。",
+            "每晚住宿設有硬上限。酒店模擬價高於上限，就只保留符合條件的青旅或膠囊；交通、門票等關鍵費用缺失時，顯示「待核價」，不把未知成本當作零。",
+            "A hard nightly cap excludes hotels that rise above it and falls back to eligible hostels or capsules. If essential transit or ticket costs are missing, the total is marked unverified rather than treating unknown costs as zero.",
+          ],
+        ],
+      },
+      {
+        title: ["Agent 做取舍，不编造价格", "Agent 做取捨，不虛構價格", "Let the agent explain trade-offs, not invent prices"],
+        body: [
+          "规划逻辑先在当前模拟选项中选出低价组合，再按落地时间、地理位置、游览时长和必去景点排路线；用户可以改选航班，权衡票价和在目的地多出的半天。语言模型负责解释这些取舍与每天的主题，不能改写报价。服务端保留授权机酒、汇率与交通数据的接入位置；未接入前，页面会清楚标注模拟或待核价。",
+          "規劃邏輯先在目前模擬選項中找出低價組合，再按落地時間、地理位置、遊覽時長及必去景點安排行程；用戶可以改選航班，權衡票價與在目的地多出的半天。語言模型負責解釋取捨與每天的主題，不能改寫報價。服務端預留授權機票酒店、匯率及交通數據的接入位置；尚未接入時，頁面會清楚標示模擬或待核價。",
+          "The planner first compares prices among its current simulated options, then uses arrival time, geography, visit duration and pinned stops to build the route. Travellers can choose a different flight to trade fare against time on the ground. The language model explains the choice and names the days; it cannot rewrite prices. The server has integration points for licensed travel, FX and transit data, while the public UI labels simulations and unknown costs clearly.",
+        ],
+      },
+      {
+        title: ["多问几题，换一次少返工的规划", "多問幾題，換一次少返工的規劃", "More choices up front, fewer corrections later"],
+        body: [
+          "这项设计故意牺牲一点首次填写速度：预算敏感的人通常愿意多选几项，换来更少的反复修改，以及真正负担得起的路线。题目尽量做成可直接点击的选项，并按需要展开，避免把复杂性一次推给用户。这里的价值承诺不是「最便宜」三个字，而是让总花费、交通代价与取舍可见。",
+          "這項設計刻意犧牲一點首次填寫速度：對價格敏感的旅客通常願意多選幾項，換取較少的反覆修改，以及真正負擔得起的路線。題目盡量做成可直接點選的選項，按需要展開，避免一次過把複雜性推給用戶。價值承諾不是「最便宜」三個字，而是讓總花費、交通成本與取捨可見。",
+          "I deliberately trade a little setup speed for fewer rounds of correction. Price-sensitive travellers may accept a few more guided choices if the resulting route is genuinely affordable. Questions are clickable and progressively disclosed, rather than a long blank form. The promise is not simply 'cheapest'; it is visibility into total cost, transit effort and compromises.",
+        ],
+        points: [
+          [
+            "商业上，低客单价不一定没有价值：如果规划可信，用户可能更愿意反复回来比较日期与路线，也可能带来合适的机酒预订转化。广告是待验证的补充收入，不能让赞助排序盖过真实低价和用户信任。",
+            "商業上，低客單價不等於沒有價值：若規劃值得信任，用戶可能更願意回來比較日期與路線，也可能帶來合適的機票酒店預訂轉化。廣告只是有待驗證的補充收入，不能讓贊助排序蓋過真實低價與用戶信任。",
+            "A lower-spend segment can still create value through repeat planning and relevant booking referrals, if the tool earns trust. Advertising is only a hypothesis for supplementary revenue; sponsored ranking must never obscure the genuinely cheaper option.",
+          ],
+          [
+            "要验证的不是浏览量本身，而是用户是否少改几轮、能否找到预算内愿意出发的方案、是否再次使用，以及推荐是否带来有质量的预订点击。现在还没有这些效果数据。",
+            "要驗證的不只是瀏覽量，而是用戶會否少改幾輪、能否找到預算內願意出發的方案、會否再次使用，以及推薦能否帶來有質素的預訂點擊。目前尚未有這些成效數據。",
+            "I would measure correction rounds, affordable plans travellers would actually take, repeat use and qualified booking handoffs—not pageviews alone. The prototype does not yet have outcome data for these hypotheses.",
+          ],
+        ],
+      },
+      {
+        title: ["下一步：把模拟方案推向可预订", "下一步：把模擬方案推向可預訂", "Next: from simulation to bookable planning"],
+        body: [
+          "下一阶段先做同题对照测试：让预算有限、从香港出发的旅客分别使用现有流程与原型，观察完成一条愿意实际出发的路线要修改多少次。正式上线前，还必须用授权服务核对机酒库存、税费、时刻和交通票价。这个原型目前没有正式用户实验或真实预订结果。",
+          "下一階段先做同題對照測試：讓預算有限、由香港出發的旅客分別使用現有流程與原型，觀察完成一條願意實際出發的路線要修改多少次。正式上線前，還須透過授權服務核對機票酒店庫存、稅費、時間及交通票價。目前原型未有正式用戶測試或真實預訂結果。",
+          "Next I would run the same planning task in both flows with budget-conscious travellers from Hong Kong, measuring how many corrections it takes to reach a trip they would actually book. Before production, licensed services must verify flight and hotel inventory, taxes, schedules and transit fares. This prototype has no formal user study or real booking outcomes yet.",
+        ],
+        points: [
+          [
+            "记录首次生成到满意所需轮数、预算超额后的调整成功率、首末日航班时间是否被正确理解，以及从行程到真实预订的有效跳转。",
+            "記錄首次生成到滿意所需輪數、超出預算後的調整成功率、首末日航班時間有否被正確理解，以及由行程跳轉到真實預訂的有效次數。",
+            "Track correction rounds, recovery from an over-budget plan, whether travellers understand arrival/departure-day constraints, and qualified handoffs from itinerary to booking.",
+          ],
+          [
+            "优先补齐京都等周边目的地与正式公共交通数据，再接入授权机酒接口。没有可靠报价的部分继续显示「待核价」，不为了看起来完整而虚构精度。",
+            "優先補齊京都等周邊目的地及正式公共交通數據，再接入授權機票酒店接口。沒有可靠報價的部分繼續顯示「待核價」，不為了看似完整而虛構精度。",
+            "Priorities are expanding verified side trips such as Kyoto, integrating authoritative transit data, then licensed flight and hotel feeds. Until a cost can be verified, the interface should keep saying 'price unverified' rather than manufacture precision.",
           ],
         ],
       },
     ],
     note: [
-      "独立概念验证，与 Trip.com 无合作关系。观察来自一次个人试用。公开应用的样例数据并非实时；真正的机酒与交通查询需取得授权接口并配置服务端。",
-      "獨立概念驗證，與 Trip.com 沒有合作關係。觀察來自一次個人試用。公開應用的樣例數據並非即時；真正的機票酒店與交通查詢需要授權接口及服務端設定。",
-      "Independent concept, not affiliated with Trip.com. Observations come from one personal session. Public sample data is not live; real supplier queries require licensed APIs and a configured backend.",
+      "独立概念验证，与 Trip.com 无合作关系。竞品观察来自一次个人试用。应用中的班次为参考示意，机酒价格为按分钟变化的模拟数据；并非实时库存、可订价格或经验证的历史均价。",
+      "獨立概念驗證，與 Trip.com 沒有合作關係。競品觀察來自一次個人試用。應用內的航班屬參考示意，機票酒店價格為按分鐘變化的模擬數據；並非即時庫存、可訂價格或經核實的歷史均價。",
+      "Independent concept; not affiliated with Trip.com. Competitor observations come from one personal session. Flight schedules are reference examples; fares and hotel prices are minute-by-minute simulations, not live inventory, bookable quotes or validated historical averages.",
     ],
   },
   {
